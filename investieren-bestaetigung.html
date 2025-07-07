@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Investitionsbestätigung</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #0d1117;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .form-container {
+      background-color: #161b22;
+      max-width: 500px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    h1 {
+      color: #00d084;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="text"], input[type="email"], input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 6px;
+      background-color: #0c0f13;
+      color: white;
+    }
+
+    button {
+      background-color: #00d084;
+      color: #0d1117;
+      font-weight: bold;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 25px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #00b374;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h1>📝 Investitionsbestätigung</h1>
+  <form id="investForm" onsubmit="return handleSubmit();">
+    <label for="name">Vor- und Nachname</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="email">E-Mail-Adresse</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="amount">Investitionsbetrag (€)</label>
+    <input type="number" id="amount" name="amount" min="500" step="100" required value="1000" />
+
+    <button type="submit">Investition abschicken</button>
+  </form>
+</div>
+
+<script>
+  function handleSubmit() {
+    alert("Danke für deine Investition!");
+    return false; // verhindert tatsächliches Absenden
+  }
+</script>
+
+</body>
+</html>
