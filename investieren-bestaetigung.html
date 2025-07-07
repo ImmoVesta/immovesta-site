@@ -57,6 +57,18 @@
     button:hover {
       background-color: #00b374;
     }
+
+    .home-button {
+      margin-top: 30px;
+      background-color: transparent;
+      border: 2px solid #00d084;
+      color: #00d084;
+    }
+
+    .home-button:hover {
+      background-color: #00d084;
+      color: #0d1117;
+    }
   </style>
 </head>
 <body>
@@ -75,14 +87,16 @@
 
     <button type="submit">Investition abschicken</button>
   </form>
+
+  <button class="home-button" onclick="window.location.href='index.html'">Zurück zur Startseite</button>
 </div>
 
 <script>
   function handleSubmit() {
     alert("Danke für deine Investition!");
     setTimeout(function() {
-      window.location.href = "investieren.html"; // oppure il nome della tua pagina progetti
-    }, 3000);
+      window.location.href = "investieren.html";
+    }, 3000); // 3 Sekunden warten, dann weiterleiten
     return false;
   }
 </script>
