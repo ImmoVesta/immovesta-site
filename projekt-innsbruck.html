@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modernes Wohnprojekt in Innsbruck</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #0d1117;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background-color: #161b22;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    h1 {
+      color: #00d084;
+      margin-bottom: 10px;
+    }
+
+    p {
+      text-align: left;
+      margin: 6px 0;
+    }
+
+    .slider-container {
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    input[type="range"] {
+      width: 100%;
+    }
+
+    .summary {
+      background-color: #0c0f13;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      color: #ccc;
+    }
+
+    button {
+      background-color: #00d084;
+      border: none;
+      color: #0d1117;
+      padding: 10px 20px;
+      font-weight: bold;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #00b374;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Modernes Wohnprojekt in Innsbruck</h1>
+  <p><strong>🗺️ Lage:</strong> Innsbruck Zentrum</p>
+  <p><strong>🏢 Einheiten:</strong> 14 Eigentumswohnungen</p>
+  <p><strong>🚗 Extra:</strong> Tiefgarage</p>
+  <p><strong>🛠️ Fertigstellung:</strong> Q3 2026</p>
+  <p><strong>📈 Renditeprognose:</strong> 5,5 % p.a.</p>
+
+  <h3>📄 Projektbeschreibung</h3>
+  <p>Das Projekt umfasst den Neubau von 14 modernen Wohnungen mit hohem Energiestandard. Zentrale Lage, hohe Nachfrage. Alle Einheiten werden möbliert verkauft. Es besteht eine Baugenehmigung und ein gesicherter Entwicklungsplan.</p>
+
+  <div class="slider-container">
+    <h3>💸 Investieren Sie jetzt</h3>
+    <p>Wählen Sie Ihren Anlagebetrag:</p>
+    <input type="range" min="500" max="10000" step="100" value="1000" id="investmentSlider">
+    <p><strong>Anlagebetrag:</strong> <span id="amount">€ 1.000</span></p>
+  </div>
+
+  <div class="summary">
+    <p><strong>Geschätzter Gewinn p.a.:</strong> <span id="gainPerYear">€ 55</span></p>
+    <p><strong>Gewinn über 5 Jahre:</strong> <span id="gain5Years">€ 275</span></p>
+    <p><strong>Rückzahlung + Zinsen:</strong> <span id="totalReturn">€ 1.275</span></p>
+  </div>
+
+  <button onclick="alert('Danke für Ihr Vertrauen! Investition eingereicht.')">Jetzt investieren</button>
+</div>
+
+<script>
+  const slider = document.getElementById('investmentSlider');
+  const amount = document.getElementById('amount');
+  const gainPerYear = document.getElementById('gainPerYear');
+  const gain5Years = document.getElementById('gain5Years');
+  const totalReturn = document.getElementById('totalReturn');
+
+  function updateValues(val) {
+    const value = parseInt(val);
+    const yearlyGain = value * 0.055;
+    const fiveYearGain = yearlyGain * 5;
+    const total = value + fiveYearGain;
+
+    amount.textContent = '€ ' + value.toLocaleString();
+    gainPerYear.textContent = '€ ' + yearlyGain.toFixed(0);
+    gain5Years.textContent = '€ ' + fiveYearGain.toFixed(0);
+    totalReturn.textContent = '€ ' + total.toFixed(0);
+  }
+
+  slider.addEventListener('input', () => {
+    updateValues(slider.value);
+  });
+
+  // inizializzazione
+  updateValues(slider.value);
+</script>
+
+</body>
+</html>
