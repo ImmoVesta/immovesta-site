@@ -136,3 +136,33 @@ ul li {
 .button:hover {
   background-color: #005f47;
 }
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+}
+
+.project-card {
+  background-color: #162028;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.project-card h2 {
+  color: #00d084;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  color: #e0e0e0;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.project-card .button {
+  display: inline-block;
+  margin-top: 10px;
+}
