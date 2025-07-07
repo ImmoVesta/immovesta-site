@@ -80,7 +80,10 @@
 <script>
   function handleSubmit() {
     alert("Danke für deine Investition!");
-    return false; // verhindert tatsächliches Absenden
+    setTimeout(function() {
+      window.location.href = "investieren.html"; // oppure il nome della tua pagina progetti
+    }, 3000);
+    return false;
   }
 </script>
 
