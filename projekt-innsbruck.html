@@ -54,7 +54,7 @@
       color: #ccc;
     }
 
-    button {
+    button, a.invest-button {
       background-color: #00d084;
       border: none;
       color: #0d1117;
@@ -63,16 +63,13 @@
       font-size: 16px;
       border-radius: 6px;
       cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
       margin: 15px 10px 0;
     }
 
-    button:hover {
+    button:hover, a.invest-button:hover {
       background-color: #00b374;
-    }
-
-    .btn-link {
-      text-decoration: none;
-      color: #0d1117;
     }
   </style>
 </head>
@@ -102,9 +99,8 @@
     <p><strong>Rückzahlung + Zinsen:</strong> <span id="totalReturn">€ 1.500</span></p>
   </div>
 
-  <a href="investieren-bestaetigung.html" class="btn-link">
-    <button>Jetzt investieren</button>
-  </a>
+  <!-- Bottone dinamico -->
+  <a href="#" id="investButton" class="invest-button">Jetzt investieren</a>
   <button onclick="window.location.href='index.html'">Zurück zur Startseite</button>
 </div>
 
@@ -114,6 +110,7 @@
   const gainPerYear = document.getElementById('gainPerYear');
   const gain5Years = document.getElementById('gain5Years');
   const totalReturn = document.getElementById('totalReturn');
+  const investButton = document.getElementById('investButton');
 
   function updateValues(val) {
     const value = parseInt(val);
@@ -127,11 +124,19 @@
     totalReturn.textContent = '€ ' + total.toFixed(0);
   }
 
+  // Aggiorna valori in tempo reale
   slider.addEventListener('input', () => {
     updateValues(slider.value);
   });
 
-  updateValues(slider.value);
+  // Costruisce link dinamico con importo
+  investButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    const betrag = slider.value;
+    window.location.href = `investieren-bestaetigung.html?betrag=${betrag}`;
+  });
+
+  updateValues(slider.value); // inizializzazione
 </script>
 
 </body>
