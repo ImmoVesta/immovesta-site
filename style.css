@@ -249,3 +249,17 @@ textarea {
   height: 150px;
   resize: vertical;
 }
+textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #ffffff; /* Sfondo bianco */
+  color: #000000; /* Testo nero visibile */
+  height: 150px;
+  resize: vertical;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+}
