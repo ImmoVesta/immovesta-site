@@ -1,41 +1,80 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontakt – ImmoVesta</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontakt - ImmoVesta</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .kontakt-info {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <img src="immovesta-logo.png" alt="ImmoVesta Logo" width="120">
-    <h1>Kontaktieren Sie uns</h1>
-  </header>
+  <h1>Kontaktiere uns</h1>
 
-  <main>
-    <section>
-      <h2>Unsere Kontaktdaten</h2>
-      <p><strong>Email:</strong> <a href="mailto:ricky.ferrara.95@gmail.com">ricky.ferrara.95@gmail.com</a></p>
-      <p><strong>Telefon:</strong> <a href="tel:+436765204470">+43 676 5204470</a></p>
-      <p><strong>Adresse:</strong> Dorfstraße 15 T16, 6122 Fritzens, Österreich</p>
-    </section>
+  <div class="kontakt-info">
+    <p><strong>Email:</strong> immovestagmbh@gmail.com</p>
+    <p><strong>Telefon:</strong> +43 676 5204470</p>
+    <p><strong>Adresse:</strong> Dorfstraße 15 T16, 6122 Fritzens</p>
+  </div>
 
-    <section>
-      <h2>Kontaktformular</h2>
-      <form action="mailto:ricky.ferrara.95@gmail.com" method="POST" enctype="text/plain">
-        <label for="email">Ihre E-Mail-Adresse:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+  <form id="contact-form">
+    <input type="email" id="email" placeholder="Deine E-Mail" required />
+    <textarea id="message" rows="5" placeholder="Deine Nachricht" required></textarea>
+    <button type="submit">Senden</button>
+  </form>
 
-        <label for="message">Ihre Nachricht:</label><br>
-        <textarea id="message" name="message" rows="6" required></textarea><br><br>
-
-        <button type="submit">Nachricht senden</button>
-      </form>
-    </section>
-
-    <div style="margin-top: 30px;">
-      <a href="index.html">Zurück zur Startseite</a>
-    </div>
-  </main>
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      alert("Danke! Deine Nachricht wurde gesendet."); // provvisorio, poi lo colleghiamo
+      document.getElementById("contact-form").reset();
+    });
+  </script>
 </body>
 </html>
