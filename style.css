@@ -180,3 +180,31 @@ footer {
   font-size: 13px;
   color: #888;
 }
+.footer-links {
+  font-size: 13px;
+  color: #aaa;
+  margin-top: 40px;
+}
+
+.footer-link {
+  cursor: pointer;
+  color: #ccc;
+  margin: 0 8px;
+  text-decoration: underline;
+}
+
+.footer-link:hover {
+  color: #2cd1a0;
+}
+
+.legal-panel {
+  display: none;
+  font-size: 13px;
+  text-align: left;
+  margin: 10px auto;
+  max-width: 700px;
+  background-color: #162028;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
