@@ -1,113 +1,53 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ImmoVesta – Investieren</title>
-  <style>
-    body {
-      background-color: #0d1b2a;
-      color: #ffffff;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-    }
-
-    h1 {
-      text-align: center;
-      color: #00d084;
-    }
-
-    .projekt {
-      background-color: #112e42;
-      padding: 20px;
-      margin-bottom: 25px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #00d08433;
-    }
-
-    .projekt h2 {
-      margin-top: 0;
-      color: #00ffc3;
-    }
-
-    .progress-container {
-      background-color: #ffffff33;
-      border-radius: 8px;
-      overflow: hidden;
-      height: 18px;
-      margin: 10px 0;
-    }
-
-    .progress-bar {
-      background-color: #00d084;
-      height: 100%;
-      width: 0%;
-      transition: width 0.5s ease-in-out;
-    }
-
-    .info {
-      font-size: 15px;
-      margin-bottom: 15px;
-    }
-
-    .projekt a {
-      display: inline-block;
-      background-color: #00d084;
-      color: #fff;
-      padding: 10px 18px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-    }
-
-    .projekt a:hover {
-      background-color: #00a673;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="subpage">
+  <header>
+    <img src="logo.png" alt="ImmoVesta Logo" class="logo-small" />
+    <h1>Investiere in Immobilienprojekte</h1>
+  </header>
 
-  <h1>💼 Aktuelle Investmentprojekte</h1>
-
-  <!-- PROJEKT 1 -->
-  <div class="projekt">
-    <h2>Projekt Innsbruck</h2>
-    <div class="progress-container">
-      <div class="progress-bar" style="width: 70%;"></div>
-    </div>
-    <div class="info">
+  <main class="project-list">
+    <!-- Projekt Innsbruck -->
+    <div class="project-card">
+      <h2>Projekt Innsbruck</h2>
+      <p>Modernes Wohngebäude im Herzen von Innsbruck. Erstklassige Lage und stabile Rendite.</p>
+      <p><strong>Investition ab:</strong> € 1.000</p>
       <p><strong>Zielbetrag:</strong> € 100.000</p>
-      <p><strong>Bereits investiert:</strong> € 70.000</p>
+      <a href="projekt-innsbruck.html" class="button">Mehr erfahren</a>
     </div>
-    <a href="projekt-innsbruck.html">Mehr erfahren</a>
+
+    <!-- Projekt Graz -->
+    <div class="project-card">
+      <h2>Projekt Graz</h2>
+      <p>Nachhaltige Apartments mit grünem Innenhof. Top-Wertsteigerung im urbanen Raum.</p>
+      <p><strong>Investition ab:</strong> € 1.000</p>
+      <p><strong>Zielbetrag:</strong> € 150.000</p>
+      <a href="projekt-graz.html" class="button">Mehr erfahren</a>
+    </div>
+
+    <!-- Projekt Wien -->
+    <div class="project-card">
+      <h2>Projekt Wien</h2>
+      <p>Exklusives Neubauprojekt in zentraler Lage Wiens mit langfristigem Wertzuwachs.</p>
+      <p><strong>Investition ab:</strong> € 1.000</p>
+      <p><strong>Zielbetrag:</strong> € 200.000</p>
+      <a href="projekt-vienna.html" class="button">Mehr erfahren</a>
+    </div>
+  </main>
+
+  <!-- Pulsante per tornare alla homepage -->
+  <div class="cta">
+    <a href="index.html" class="button">Zurück zur Startseite</a>
   </div>
 
-  <!-- PROJEKT 2 -->
-  <div class="projekt">
-    <h2>Projekt Graz</h2>
-    <div class="progress-container">
-      <div class="progress-bar" style="width: 45%;"></div>
-    </div>
-    <div class="info">
-      <p><strong>Zielbetrag:</strong> € 80.000</p>
-      <p><strong>Bereits investiert:</strong> € 36.000</p>
-    </div>
-    <a href="projekt-graz.html">Mehr erfahren</a>
-  </div>
-
-  <!-- PROJEKT 3 -->
-  <div class="projekt">
-    <h2>Projekt Wien</h2>
-    <div class="progress-container">
-      <div class="progress-bar" style="width: 82%;"></div>
-    </div>
-    <div class="info">
-      <p><strong>Zielbetrag:</strong> € 120.000</p>
-      <p><strong>Bereits investiert:</strong> € 98.400</p>
-    </div>
-    <a href="projekt-vienna.html">Mehr erfahren</a>
-  </div>
-
+  <footer>
+    <p>© 2025 ImmoVesta GmbH. Alle Rechte vorbehalten.</p>
+  </footer>
 </body>
 </html>
