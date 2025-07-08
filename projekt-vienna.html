@@ -1,143 +1,22 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Projekt Wien</title>
-  <style>
-    body {
-      background-color: #0d1b2a;
-      color: #ffffff;
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-
-    h1, h2 {
-      color: #00d084;
-    }
-
-    .section {
-      margin-bottom: 30px;
-    }
-
-    .progress-container {
-      background-color: #ffffff33;
-      border-radius: 8px;
-      overflow: hidden;
-      height: 20px;
-      margin: 10px 0;
-    }
-
-    .progress-bar {
-      background-color: #00d084;
-      height: 100%;
-      width: 60%;
-      transition: width 0.5s ease-in-out;
-    }
-
-    .data-row p {
-      margin: 5px 0;
-    }
-
-    input[type=range] {
-      width: 100%;
-    }
-
-    .results {
-      margin-top: 15px;
-      margin-bottom: 20px;
-    }
-
-    .buttons a {
-      display: inline-block;
-      margin: 10px 10px 0 0;
-      padding: 12px 20px;
-      background-color: #00d084;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-    }
-
-    .buttons a:hover {
-      background-color: #00a66c;
-    }
-  </style>
-</head>
+<head><meta charset="UTF-8"><title>Projekt Wien</title></head>
 <body>
-
-  <h1>🏢 Modernes Wohnkonzept in Wien</h1>
-
-  <div class="section">
-    <p><strong>Standort:</strong> Wien, Österreich</p>
-    <p><strong>Anzahl Einheiten:</strong> 22 Wohnungen mit Gemeinschaftsflächen</p>
-    <p><strong>Extras:</strong> Energiesparsysteme, Tiefgarage, Smart Home Integration</p>
-    <p><strong>Geplante Fertigstellung:</strong> Q1 2027</p>
-    <p><strong>Renditeprognose:</strong> 10 % p.a.</p>
+  <h1>🏢 Projekt Wien</h1>
+  <input type="range" id="investment-slider" min="500" max="10000" step="500" value="1000" />
+  <p><strong>Investition:</strong> € <span id="investment-amount">1000</span></p>
+  <div>
+    <a href="investieren-bestaetigung.html?projekt=vienna" onclick="saveInvestment()">Jetzt investieren</a>
+    <a href="investieren.html">Zurück</a>
   </div>
-
-  <div class="section">
-    <h2>📊 Investitionsübersicht</h2>
-    <div class="data-row">
-      <p><strong>Zielbetrag:</strong> € 120.000</p>
-      <p><strong>Bereits investiert:</strong> € 72.000</p>
-      <p><strong>Verbleibend:</strong> € 48.000</p>
-      <p><strong>Mindestanlage:</strong> € 500</p>
-      <p><strong>Anzahl Investoren:</strong> 54</p>
-      <p><strong>Restlaufzeit:</strong> 25 Tage</p>
-    </div>
-
-    <div class="progress-container">
-      <div class="progress-bar"></div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>💰 Ihr Investment</h2>
-    <p>Wählen Sie den gewünschten Betrag:</p>
-    <input type="range" id="investment-slider" min="500" max="10000" step="500" value="1000"/>
-    <p><strong>Investition:</strong> € <span id="investment-amount">1000</span></p>
-
-    <div class="results" id="results">
-      <p><strong>Geschätzter Gewinn p.a.:</strong> € 100</p>
-      <p><strong>Gewinn über 5 Jahre:</strong> € 500</p>
-      <p><strong>Rückzahlung + Zinsen:</strong> € 1.500</p>
-    </div>
-  </div>
-
-  <div class="buttons">
-    <a href="investieren-bestaetigung.html" onclick="saveInvestment()">Jetzt investieren</a>
-    <a href="investieren.html">Zurück zur Projektübersicht</a>
-  </div>
-
   <script>
     const slider = document.getElementById('investment-slider');
     const amount = document.getElementById('investment-amount');
-    const results = document.getElementById('results');
-
-    function updateResults(value) {
-      amount.textContent = value;
-      const yearlyReturn = value * 0.10;
-      const totalReturn = yearlyReturn * 5;
-      const totalWithCapital = value + totalReturn;
-
-      results.innerHTML = `
-        <p><strong>Geschätzter Gewinn p.a.:</strong> € ${yearlyReturn.toFixed(0)}</p>
-        <p><strong>Gewinn über 5 Jahre:</strong> € ${totalReturn.toFixed(0)}</p>
-        <p><strong>Rückzahlung + Zinsen:</strong> € ${totalWithCapital.toFixed(0)}</p>
-      `;
-    }
-
+    slider.addEventListener('input', e => amount.textContent = e.target.value);
+    amount.textContent = slider.value;
     function saveInvestment() {
-      localStorage.setItem('investition_betrag', slider.value);
+      localStorage.setItem('betrag_vienna', slider.value);
     }
-
-    slider.addEventListener('input', (e) => {
-      updateResults(parseInt(e.target.value));
-    });
-
-    updateResults(parseInt(slider.value));
   </script>
-
 </body>
 </html>
