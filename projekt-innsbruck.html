@@ -2,142 +2,139 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Modernes Wohnprojekt in Innsbruck</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projekt Innsbruck</title>
   <style>
     body {
-      font-family: sans-serif;
-      background-color: #0d1117;
+      background-color: #0d1b2a;
       color: #ffffff;
+      font-family: Arial, sans-serif;
       padding: 20px;
-      text-align: center;
     }
 
-    .container {
-      max-width: 600px;
-      margin: auto;
-      background-color: #161b22;
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    h1 {
+    h1, h2 {
       color: #00d084;
-      margin-bottom: 10px;
     }
 
-    p {
-      text-align: left;
-      margin: 6px 0;
+    .section {
+      margin-bottom: 30px;
     }
 
-    .highlight {
-      color: #00d084;
-      font-weight: bold;
-      margin-top: 10px;
+    .progress-container {
+      background-color: #ffffff33;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 20px;
+      margin: 10px 0;
     }
 
-    .slider-container {
-      margin: 30px 0;
-      text-align: center;
+    .progress-bar {
+      background-color: #00d084;
+      height: 100%;
+      width: 70%;
+      transition: width 0.5s ease-in-out;
     }
 
-    input[type="range"] {
+    .data-row p {
+      margin: 5px 0;
+    }
+
+    input[type=range] {
       width: 100%;
     }
 
-    .summary {
-      background-color: #0c0f13;
-      padding: 15px;
-      border-radius: 8px;
-      margin-top: 20px;
-      color: #ccc;
+    .results {
+      margin-top: 15px;
+      margin-bottom: 20px;
     }
 
-    button, a.invest-button {
-      background-color: #00d084;
-      border: none;
-      color: #0d1117;
-      padding: 10px 20px;
-      font-weight: bold;
-      font-size: 16px;
-      border-radius: 6px;
-      cursor: pointer;
-      text-decoration: none;
+    .buttons a {
       display: inline-block;
-      margin: 15px 10px 0;
+      margin: 10px 10px 0 0;
+      padding: 12px 20px;
+      background-color: #00d084;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
     }
 
-    button:hover, a.invest-button:hover {
-      background-color: #00b374;
+    .buttons a:hover {
+      background-color: #00a66c;
     }
   </style>
 </head>
 <body>
 
-<div class="container">
-  <h1>Modernes Wohnprojekt in Innsbruck</h1>
-  <p><strong>📍 Lage:</strong> Zentrum Innsbruck</p>
-  <p><strong>🏢 Einheiten:</strong> 14 Neubauwohnungen</p>
-  <p><strong>🚗 Extra:</strong> Tiefgarage, hochwertige Ausstattung</p>
-  <p><strong>📈 Renditeprognose:</strong> 10,0 % p.a.</p>
-  <p class="highlight">🚀 10 % garantierter Zielgewinn – nur für die ersten 100 Investoren!</p>
+  <h1>🏔️ Nachhaltiges Wohnprojekt Innsbruck</h1>
 
-  <h3>📄 Projektbeschreibung</h3>
-  <p>Neubau von modernen Eigentumswohnungen mit Fokus auf urbane Lebensqualität und Nachhaltigkeit. Attraktive Lage, stabile Nachfrage, sicheres Investment.</p>
-
-  <div class="slider-container">
-    <h3>💸 Investieren Sie jetzt</h3>
-    <p>Wählen Sie Ihren Anlagebetrag:</p>
-    <input type="range" min="500" max="10000" step="100" value="1000" id="investmentSlider">
-    <p><strong>Anlagebetrag:</strong> <span id="amount">€ 1.000</span></p>
+  <div class="section">
+    <p><strong>Standort:</strong> Innsbruck, Tirol</p>
+    <p><strong>Anzahl Einheiten:</strong> 14 Wohnungen</p>
+    <p><strong>Extras:</strong> Solarenergie, Passivhaus-Standard, Bergblick</p>
+    <p><strong>Geplante Fertigstellung:</strong> Q4 2025</p>
+    <p><strong>Renditeprognose:</strong> 10 % p.a.</p>
   </div>
 
-  <div class="summary">
-    <p><strong>Geschätzter Gewinn p.a.:</strong> <span id="gainPerYear">€ 100</span></p>
-    <p><strong>Gewinn über 5 Jahre:</strong> <span id="gain5Years">€ 500</span></p>
-    <p><strong>Rückzahlung + Zinsen:</strong> <span id="totalReturn">€ 1.500</span></p>
+  <div class="section">
+    <h2>📊 Investitionsübersicht</h2>
+    <div class="data-row">
+      <p><strong>Zielbetrag:</strong> € 100.000</p>
+      <p><strong>Bereits investiert:</strong> € 70.000</p>
+      <p><strong>Verbleibend:</strong> € 30.000</p>
+      <p><strong>Mindestanlage:</strong> € 500</p>
+      <p><strong>Anzahl Investoren:</strong> 47</p>
+      <p><strong>Restlaufzeit:</strong> 21 Tage</p>
+    </div>
+
+    <div class="progress-container">
+      <div class="progress-bar" style="width: 70%;"></div>
+    </div>
   </div>
 
-  <!-- Bottone dinamico -->
-  <a href="#" id="investButton" class="invest-button">Jetzt investieren</a>
-  <button onclick="window.location.href='index.html'">Zurück zur Startseite</button>
-</div>
+  <div class="section">
+    <h2>💰 Ihr Investment</h2>
+    <p>Wählen Sie den gewünschten Betrag:</p>
+    <input type="range" id="investment-slider" min="500" max="10000" step="500" value="1000"/>
+    <p><strong>Investition:</strong> € <span id="investment-amount">1000</span></p>
 
-<script>
-  const slider = document.getElementById('investmentSlider');
-  const amount = document.getElementById('amount');
-  const gainPerYear = document.getElementById('gainPerYear');
-  const gain5Years = document.getElementById('gain5Years');
-  const totalReturn = document.getElementById('totalReturn');
-  const investButton = document.getElementById('investButton');
+    <div class="results" id="results">
+      <p><strong>Geschätzter Gewinn p.a.:</strong> € 100</p>
+      <p><strong>Gewinn über 5 Jahre:</strong> € 500</p>
+      <p><strong>Rückzahlung + Zinsen:</strong> € 1.500</p>
+    </div>
+  </div>
 
-  function updateValues(val) {
-    const value = parseInt(val);
-    const yearlyGain = value * 0.10;
-    const fiveYearGain = yearlyGain * 5;
-    const total = value + fiveYearGain;
+  <div class="buttons">
+    <a href="investieren-bestaetigung.html">Jetzt investieren</a>
+    <a href="investieren.html">Zurück zur Projektübersicht</a>
+  </div>
 
-    amount.textContent = '€ ' + value.toLocaleString();
-    gainPerYear.textContent = '€ ' + yearlyGain.toFixed(0);
-    gain5Years.textContent = '€ ' + fiveYearGain.toFixed(0);
-    totalReturn.textContent = '€ ' + total.toFixed(0);
-  }
+  <script>
+    const slider = document.getElementById('investment-slider');
+    const amount = document.getElementById('investment-amount');
+    const results = document.getElementById('results');
 
-  // Aggiorna valori in tempo reale
-  slider.addEventListener('input', () => {
-    updateValues(slider.value);
-  });
+    function updateResults(value) {
+      amount.textContent = value;
+      const yearlyReturn = value * 0.10;
+      const totalReturn = yearlyReturn * 5;
+      const totalWithCapital = value + totalReturn;
 
-  // Costruisce link dinamico con importo
-  investButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    const betrag = slider.value;
-    window.location.href = `investieren-bestaetigung.html?betrag=${betrag}`;
-  });
+      results.innerHTML = `
+        <p><strong>Geschätzter Gewinn p.a.:</strong> € ${yearlyReturn.toFixed(0)}</p>
+        <p><strong>Gewinn über 5 Jahre:</strong> € ${totalReturn.toFixed(0)}</p>
+        <p><strong>Rückzahlung + Zinsen:</strong> € ${totalWithCapital.toFixed(0)}</p>
+      `;
+    }
 
-  updateValues(slider.value); // inizializzazione
-</script>
+    slider.addEventListener('input', (e) => {
+      updateResults(parseInt(e.target.value));
+    });
+
+    // Initialisierung
+    updateResults(parseInt(slider.value));
+  </script>
 
 </body>
 </html>
