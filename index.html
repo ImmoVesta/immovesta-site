@@ -32,6 +32,35 @@
       margin-top: 0;
       color: #2cd1a0;
     }
+
+    /* COOKIE BANNER */
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #222;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      font-size: 14px;
+      z-index: 1000;
+    }
+
+    #cookie-banner a {
+      color: #2cd1a0;
+      text-decoration: underline;
+    }
+
+    #cookie-banner button {
+      margin-left: 15px;
+      background-color: #2cd1a0;
+      color: #0c1a23;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -93,11 +122,32 @@
     <p class="copyright">© 2025 ImmoVesta – Alle Rechte vorbehalten.</p>
   </footer>
 
+  <!-- JS per pannelli legali -->
   <script>
     function toggleSection(id) {
       const section = document.getElementById(id);
       section.style.display = section.style.display === 'block' ? 'none' : 'block';
     }
+  </script>
+
+  <!-- COOKIE BANNER -->
+  <div id="cookie-banner">
+    Wir verwenden Cookies, um Ihnen das beste Erlebnis auf unserer Website zu bieten.
+    <a href="#datenschutz">Mehr erfahren</a>
+    <button onclick="acceptCookies()">OK</button>
+  </div>
+
+  <script>
+    function acceptCookies() {
+      document.getElementById('cookie-banner').style.display = 'none';
+      localStorage.setItem('cookiesAccepted', 'true');
+    }
+
+    window.onload = function () {
+      if (localStorage.getItem('cookiesAccepted') === 'true') {
+        document.getElementById('cookie-banner').style.display = 'none';
+      }
+    };
   </script>
 </body>
 </html>
