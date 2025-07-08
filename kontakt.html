@@ -18,42 +18,33 @@
       <p><strong>Adresse:</strong> Dorfstraße 15 T16, 6122 Fritzens</p>
     </section>
 
-    <form id="contact-form" class="kontakt-form">
-      <input type="email" id="email" placeholder="Deine E-Mail" required />
-      <textarea id="message" rows="5" placeholder="Deine Nachricht" required></textarea>
+    <form id="contact-form" class="kontakt-form" onsubmit="sendEmail(event)">
+      <input type="email" name="user_email" placeholder="Deine E-Mail" required />
+      <textarea name="message" rows="5" placeholder="Deine Nachricht" required></textarea>
       <button type="submit">Senden</button>
     </form>
   </main>
 
-  <script>
-    document.getElementById("contact-form").addEventListener("submit", function(event) {
-      event.preventDefault();
-      alert("Danke! Deine Nachricht wurde gesendet.");
-      document.getElementById("contact-form").reset();
-    });
-  </script>
   <!-- EmailJS SDK -->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
-<script>
-  // Inizializza EmailJS con la tua Public Key
-  (function(){
-    emailjs.init("Csjhd5DCBIV5rBRaA");
-  })();
+  <script>
+    (function(){
+      emailjs.init("Csjhd5DCBIV5rBRaA");
+    })();
 
-  // Funzione che invia il modulo
-  function sendEmail(event) {
-    event.preventDefault(); // Previene il ricaricamento della pagina
+    function sendEmail(event) {
+      event.preventDefault();
 
-    emailjs.sendForm("Immovesta_GmbH", "Template_Immovesta", "#contact-form")
-      .then(function(response) {
-        alert("Danke für deine Nachricht!");
-        document.getElementById("contact-form").reset();
-      }, function(error) {
-        alert("Fehler beim Senden. Bitte versuche es erneut.");
-        console.log("FAILED...", error);
-      });
-  }
-</script>
+      emailjs.sendForm("Immovesta_GmbH", "Template_Immovesta", "#contact-form")
+        .then(function(response) {
+          alert("Danke für deine Nachricht!");
+          document.getElementById("contact-form").reset();
+        }, function(error) {
+          alert("Fehler beim Senden. Bitte versuche es erneut.");
+          console.log("FAILED...", error);
+        });
+    }
+  </script>
 </body>
 </html>
