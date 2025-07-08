@@ -106,7 +106,7 @@
   </div>
 
   <div class="buttons">
-    <a href="investieren-bestaetigung.html">Jetzt investieren</a>
+    <a href="investieren-bestaetigung.html" onclick="saveInvestment()">Jetzt investieren</a>
     <a href="investieren.html">Zurück zur Projektübersicht</a>
   </div>
 
@@ -128,11 +128,14 @@
       `;
     }
 
+    function saveInvestment() {
+      localStorage.setItem('investition_betrag', slider.value);
+    }
+
     slider.addEventListener('input', (e) => {
       updateResults(parseInt(e.target.value));
     });
 
-    // Initialisierung
     updateResults(parseInt(slider.value));
   </script>
 
