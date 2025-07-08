@@ -61,6 +61,21 @@
       border-radius: 5px;
       cursor: pointer;
     }
+
+    .disclaimer {
+      margin-top: 30px;
+      font-size: 13px;
+      color: #ccc;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .copyright {
+      text-align: center;
+      font-size: 12px;
+      color: #aaa;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
@@ -82,8 +97,11 @@
 
   <footer>
     <p class="disclaimer">
-  <strong>Hinweis:</strong> ImmoVesta ist derzeit ein privates Konzept und keine öffentliche Investmentplattform. Diese Website dient ausschließlich der Präsentation einer potenziellen Lösung zur Zusammenarbeit mit Bankpartnern. Es werden derzeit keine finanziellen Dienstleistungen, Investitionen oder verbindlichen Angebote für Endkunden angeboten.
-</p>
+      <strong>Hinweis:</strong> ImmoVesta ist derzeit ein privates Konzept und keine öffentliche Investmentplattform.
+      Diese Website dient ausschließlich der Präsentation einer potenziellen Lösung zur Zusammenarbeit mit Bankpartnern.
+      Es werden derzeit keine finanziellen Dienstleistungen, Investitionen oder verbindlichen Angebote für Endkunden angeboten.
+    </p>
+
     <div class="footer-links">
       <span class="footer-link" onclick="toggleSection('impressum')">Impressum</span> |
       <span class="footer-link" onclick="toggleSection('datenschutz')">Datenschutz</span> |
@@ -107,31 +125,29 @@
     <div id="datenschutz" class="legal-panel">
       <h4>Datenschutz</h4>
       <p>
-        Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre Daten ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2003).<br><br>
-        Beim Besuch unserer Website wird Ihre IP-Adresse, Beginn und Ende der Sitzung erfasst. Dies ist technisch bedingt und stellt somit ein berechtigtes Interesse iSd Art 6 Abs 1 lit f DSGVO dar. Soweit im Folgenden nichts anderes geregelt wird, werden diese Daten nicht weiterverarbeitet.<br><br>
-        Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch. Bei Fragen wenden Sie sich bitte an: <strong>immovestagmbh@gmail.com</strong>
+        Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre Daten ausschließlich
+        auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2003).<br><br>
+        Beim Besuch unserer Website wird Ihre IP-Adresse, Beginn und Ende der Sitzung erfasst. Dies ist technisch
+        bedingt und stellt somit ein berechtigtes Interesse iSd Art 6 Abs 1 lit f DSGVO dar.
+        Soweit im Folgenden nichts anderes geregelt wird, werden diese Daten nicht weiterverarbeitet.<br><br>
+        Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und
+        Widerspruch. Bei Fragen wenden Sie sich bitte an: <strong>immovestagmbh@gmail.com</strong>
       </p>
     </div>
 
     <div id="agb" class="legal-panel">
       <h4>AGB (Allgemeine Geschäftsbedingungen)</h4>
       <p>
-        Diese Allgemeinen Geschäftsbedingungen gelten für alle Leistungen und Angebote der ImmoVesta GmbH. Durch die Nutzung unserer Plattform erklären Sie sich mit den nachstehenden Bedingungen einverstanden.<br><br>
-        Die Nutzung der Plattform erfolgt auf eigene Verantwortung. Die ImmoVesta GmbH übernimmt keine Gewähr für die Aktualität, Richtigkeit oder Vollständigkeit der bereitgestellten Informationen.<br><br>
+        Diese Allgemeinen Geschäftsbedingungen gelten für alle Leistungen und Angebote der ImmoVesta GmbH.
+        Durch die Nutzung unserer Plattform erklären Sie sich mit den nachstehenden Bedingungen einverstanden.<br><br>
+        Die Nutzung der Plattform erfolgt auf eigene Verantwortung.
+        Die ImmoVesta GmbH übernimmt keine Gewähr für die Aktualität, Richtigkeit oder Vollständigkeit der bereitgestellten Informationen.<br><br>
         Änderungen dieser AGB sind jederzeit möglich. Es gilt die jeweils aktuelle Version, die auf der Website veröffentlicht ist.
       </p>
     </div>
 
     <p class="copyright">© 2025 ImmoVesta – Alle Rechte vorbehalten.</p>
   </footer>
-
-  <!-- JS per pannelli legali -->
-  <script>
-    function toggleSection(id) {
-      const section = document.getElementById(id);
-      section.style.display = section.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
 
   <!-- COOKIE BANNER -->
   <div id="cookie-banner">
@@ -140,7 +156,13 @@
     <button onclick="acceptCookies()">OK</button>
   </div>
 
+  <!-- SCRIPT -->
   <script>
+    function toggleSection(id) {
+      const section = document.getElementById(id);
+      section.style.display = section.style.display === 'block' ? 'none' : 'block';
+    }
+
     function acceptCookies() {
       document.getElementById('cookie-banner').style.display = 'none';
       localStorage.setItem('cookiesAccepted', 'true');
