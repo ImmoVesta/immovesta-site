@@ -1,14 +1,105 @@
 <!DOCTYPE html>
 <html lang="de">
-<head><meta charset="UTF-8"><title>Bestätigung</title></head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investition bestätigen</title>
+  <style>
+    body {
+      background-color: #0d1b2a;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #00d084;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 80%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 12px 30px;
+      margin-top: 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      background-color: #00d084;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #00a66c;
+    }
+
+    #popup {
+      display: none;
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      background-color: #112e42;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00d08477;
+      z-index: 999;
+    }
+
+    #popup h2 {
+      margin-bottom: 20px;
+      color: #00d084;
+    }
+
+    #popup button {
+      background-color: #00d084;
+    }
+  </style>
+</head>
 <body>
-  <h1>🎉 Danke für deine Investition!</h1>
-  <p>Du hast <strong>€ <span id="betrag">...</span></strong> investiert.</p>
+
+  <h1>Bestätige deine Investition</h1>
+
+  <form id="investment-form" onsubmit="return false;">
+    <input type="text" id="vorname" placeholder="Vorname" required><br>
+    <input type="text" id="nachname" placeholder="Nachname" required><br>
+    <input type="email" id="email" placeholder="E-Mail" required><br>
+    <input type="number" id="betrag" placeholder="Investitionsbetrag (€)" required><br>
+    <button onclick="showPopup()">Bestätigung</button>
+  </form>
+
+  <div id="popup">
+    <h2>Danke für deine Investition!</h2>
+    <button onclick="goBack()">OK</button>
+  </div>
+
   <script>
-    const params = new URLSearchParams(window.location.search);
-    const projekt = params.get('projekt');
-    const betrag = localStorage.getItem(`betrag_${projekt}`);
-    document.getElementById('betrag').textContent = betrag ?? 'Unbekannt';
+    function showPopup() {
+      const vorname = document.getElementById('vorname').value.trim();
+      const nachname = document.getElementById('nachname').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const betrag = document.getElementById('betrag').value.trim();
+
+      if (vorname && nachname && email && betrag >= 500) {
+        document.getElementById('popup').style.display = 'block';
+      } else {
+        alert("Bitte alle Felder korrekt ausfüllen. Mindestbetrag: €500");
+      }
+    }
+
+    function goBack() {
+      window.location.href = "investieren.html";
+    }
   </script>
+
 </body>
 </html>
