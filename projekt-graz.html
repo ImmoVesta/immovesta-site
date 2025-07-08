@@ -4,135 +4,49 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projekt Graz</title>
-  <style>
-    body {
-      background-color: #0d1b2a;
-      color: #ffffff;
-      font-family: 'Arial', sans-serif;
-      padding: 20px;
-      line-height: 1.6;
-    }
-
-    h1, h2 {
-      color: #00d084;
-    }
-
-    .section {
-      margin-bottom: 30px;
-    }
-
-    .progress-container {
-      background-color: #ffffff33;
-      border-radius: 8px;
-      overflow: hidden;
-      height: 20px;
-      margin: 10px 0;
-    }
-
-    .progress-bar {
-      background-color: #00d084;
-      height: 100%;
-      width: 55%;
-      transition: width 0.5s ease-in-out;
-    }
-
-    input[type=range] {
-      width: 100%;
-      margin: 10px 0;
-    }
-
-    .buttons a {
-      display: inline-block;
-      margin: 10px 10px 0 0;
-      padding: 12px 20px;
-      background-color: #00d084;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-    }
-
-    .buttons a:hover {
-      background-color: #00a66c;
-    }
-
-    .results {
-      margin-top: 15px;
-      background-color: #ffffff11;
-      padding: 10px;
-      border-radius: 6px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="subpage">
+  <header>
+    <img src="immovesta-logo.PNG" alt="ImmoVesta Logo" class="logo-small" />
+    <h1>Projekt Graz</h1>
+  </header>
 
-  <h1>🌆 Stadthaus Graz</h1>
-
-  <div class="section">
+  <section class="info-section">
+    <h2>Details zum Projekt</h2>
     <p>
-      Das Projekt „Stadthaus Graz“ vereint modernes Design mit urbanem Komfort. Direkt am Murufer entstehen 10 hochwertige Eigentumswohnungen mit smartem Raumkonzept, nachhaltigen Baumaterialien und innovativer Haustechnik.
+      In einem aufstrebenden Stadtteil von Graz wird ein neues Mehrfamilienhaus mit 20 Wohnungen realisiert.
+      Attraktive Lage, moderne Architektur und stabile Mieteinnahmen machen dieses Projekt besonders lukrativ.
     </p>
-    <p>
-      Die Nähe zur Grazer Altstadt sowie zu Universitäten, Cafés und Parks macht diese Lage besonders attraktiv – sowohl für Eigennutzer als auch für Kapitalanleger.
-    </p>
-    <p><strong>Fertigstellung:</strong> Q2 2026 | <strong>Renditeprognose:</strong> 10% p.a.</p>
-  </div>
+  </section>
 
-  <div class="section">
-    <h2>📊 Investitionsdetails</h2>
-    <p><strong>Zielbetrag:</strong> € 80.000</p>
-    <p><strong>Bereits investiert:</strong> € 44.000</p>
-    <p><strong>Verbleibend:</strong> € 36.000</p>
-    <p><strong>Mindestanlage:</strong> € 500</p>
-    <p><strong>Investoren:</strong> 21 | <strong>Restlaufzeit:</strong> 17 Tage</p>
+  <section class="info-section">
+    <h2>Investitionsbetrag wählen</h2>
+    <label for="investment">Wähle deinen Betrag (€):</label><br />
+    <input type="range" id="investment" name="investment" min="650" max="15000" step="10" value="1000">
+    <p>Gewählter Betrag: <span id="selectedAmount">€1000</span></p>
+    <p>Renditeprognose (10%): <span id="profit">€100</span></p>
+  </section>
 
-    <div class="progress-container">
-      <div class="progress-bar"></div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>💶 Ihr Investment</h2>
-    <input type="range" id="investment-slider" min="500" max="10000" step="500" value="1000" />
-    <p><strong>Investition:</strong> € <span id="investment-amount">1000</span></p>
-
-    <div class="results" id="results">
-      <p><strong>Jährlicher Gewinn:</strong> € 100</p>
-      <p><strong>Gewinn nach 5 Jahren:</strong> € 500</p>
-      <p><strong>Rückzahlung inkl. Zinsen:</strong> € 1.500</p>
-    </div>
-  </div>
-
-  <div class="buttons">
-    <a href="investieren-bestaetigung.html?projekt=graz" onclick="saveInvestment()">Jetzt investieren</a>
-    <a href="investieren.html">Zurück zur Übersicht</a>
+  <div class="cta">
+    <a href="investieren-bestaetigung.html?projekt=graz" class="button">Jetzt investieren</a><br />
+    <a href="investieren.html" class="button">Zurück zu den Projekten</a>
   </div>
 
   <script>
-    const slider = document.getElementById('investment-slider');
-    const amount = document.getElementById('investment-amount');
-    const results = document.getElementById('results');
+    const slider = document.getElementById("investment");
+    const selectedAmount = document.getElementById("selectedAmount");
+    const profit = document.getElementById("profit");
 
-    function updateResults(value) {
-      amount.textContent = value;
-      const yearly = value * 0.10;
-      const total = yearly * 5;
-      const payout = value + total;
+    slider.addEventListener("input", function () {
+      const value = parseInt(this.value);
+      selectedAmount.textContent = `€${value}`;
+      profit.textContent = `€${(value * 0.10).toFixed(2)}`;
+      localStorage.setItem("betrag_graz", value);
+    });
 
-      results.innerHTML = `
-        <p><strong>Jährlicher Gewinn:</strong> € ${yearly.toFixed(0)}</p>
-        <p><strong>Gewinn nach 5 Jahren:</strong> € ${total.toFixed(0)}</p>
-        <p><strong>Rückzahlung inkl. Zinsen:</strong> € ${payout.toFixed(0)}</p>
-      `;
-    }
-
-    function saveInvestment() {
-      localStorage.setItem('betrag_graz', slider.value);
-    }
-
-    slider.addEventListener('input', e => updateResults(parseInt(e.target.value)));
-    updateResults(slider.value);
+    // Initial speichern
+    localStorage.setItem("betrag_graz", slider.value);
   </script>
-
 </body>
 </html>
