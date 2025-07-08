@@ -7,133 +7,106 @@ body {
 }
 
 .container {
-  max-width: 900px;
-  margin: auto;
+  max-width: 960px;
+  margin: 0 auto;
   padding: 40px 20px;
-}
-
-header {
-  background-color: #1e293b;
-  padding: 20px 0;
   text-align: center;
-  color: #10b981;
 }
 
 h1, h2, h3 {
-  margin: 20px 0 10px;
-  color: #10b981;
+  color: #38bdf8;
+  margin-bottom: 20px;
 }
 
-p, label {
-  font-size: 16px;
+p {
+  font-size: 1.1rem;
   line-height: 1.6;
-  color: #e2e8f0;
+  margin-bottom: 25px;
+}
+
+button, .btn {
+  background-color: #38bdf8;
+  color: #0f172a;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 10px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: #0ea5e9;
+  color: #ffffff;
+}
+
+input, textarea, select {
+  padding: 10px;
+  font-size: 1rem;
+  width: 100%;
+  margin-bottom: 15px;
+  border: 1px solid #38bdf8;
+  border-radius: 4px;
+  background-color: #1e293b;
+  color: white;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8;
+}
+
+a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.progress-container {
+  width: 100%;
+  background-color: #1e293b;
+  border-radius: 4px;
+  margin: 15px 0;
+}
+
+.progress-bar {
+  height: 24px;
+  background-color: #22c55e;
+  border-radius: 4px;
+  text-align: center;
+  color: #0f172a;
+  font-weight: bold;
+  transition: width 0.5s ease-in-out;
 }
 
 .card {
   background-color: #1e293b;
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-}
-
-.button, .btn {
-  display: inline-block;
-  padding: 12px 20px;
-  background-color: #10b981;
-  color: white;
-  border: none;
+  border: 1px solid #334155;
   border-radius: 8px;
-  text-decoration: none;
-  font-size: 16px;
-  margin-top: 15px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.button:hover, .btn:hover {
-  background-color: #059669;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  background-color: #1e293b;
-  color: #fff;
-}
-
-input::placeholder, textarea::placeholder {
-  color: #94a3b8;
-}
-
-form {
-  margin-top: 20px;
-}
-
-.progress-bar {
-  width: 100%;
-  height: 16px;
-  background-color: #334155;
-  border-radius: 10px;
+  padding: 25px;
   margin: 20px 0;
-  overflow: hidden;
+  text-align: left;
 }
 
-.progress {
-  height: 100%;
-  background-color: #10b981;
-  width: 0%;
-  transition: width 0.3s ease;
+.card h3 {
+  margin-top: 0;
+  color: #38bdf8;
 }
 
-.investment-info {
-  background-color: #334155;
-  padding: 20px;
-  border-radius: 10px;
-  margin-top: 20px;
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
-.results {
-  background-color: #334155;
-  padding: 20px;
-  border-radius: 10px;
-  margin-top: 20px;
-}
-
-.results p, .investment-info p {
-  margin: 10px 0;
-}
-
-.popup {
-  position: fixed;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #1e293b;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
-  text-align: center;
-  z-index: 9999;
-}
-
-.popup p {
-  color: white;
-  font-size: 18px;
-}
-
-.popup button {
-  margin-top: 20px;
-  background-color: #10b981;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
 }
