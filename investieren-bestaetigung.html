@@ -83,6 +83,16 @@
   </div>
 
   <script>
+    // Recupera il progetto dalla query URL
+    const params = new URLSearchParams(window.location.search);
+    const projekt = params.get('projekt');
+
+    // Recupera il valore da localStorage
+    const betrag = localStorage.getItem(`betrag_${projekt}`);
+    if (betrag) {
+      document.getElementById('betrag').value = betrag;
+    }
+
     function showPopup() {
       const vorname = document.getElementById('vorname').value.trim();
       const nachname = document.getElementById('nachname').value.trim();
