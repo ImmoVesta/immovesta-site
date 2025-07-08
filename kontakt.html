@@ -4,74 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kontakt</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f5f5f5;
-      padding: 40px;
-      color: #333;
-    }
-
-    h1 {
-      text-align: center;
-      color: #004aad;
-    }
-
-    .kontakt-info {
-      text-align: center;
-      margin-bottom: 30px;
-      font-size: 18px;
-    }
-
-    form {
-      max-width: 400px;
-      margin: 0 auto;
-      background-color: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 16px;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      background-color: #004aad;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #003080;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Kontaktiere uns</h1>
+  <header>
+    <h1>Kontaktiere uns</h1>
+  </header>
 
-  <div class="kontakt-info">
-    <p><strong>Email:</strong> immovestagmbh@gmail.com</p>
-    <p><strong>Telefon:</strong> +43 676 5204470</p>
-    <p><strong>Adresse:</strong> Dorfstraße 15 T16, 6122 Fritzens</p>
-  </div>
+  <main class="kontakt-container">
+    <section class="kontakt-info">
+      <p><strong>Email:</strong> immovestagmbh@gmail.com</p>
+      <p><strong>Telefon:</strong> +43 676 5204470</p>
+      <p><strong>Adresse:</strong> Dorfstraße 15 T16, 6122 Fritzens</p>
+    </section>
 
-  <form id="contact-form">
-    <input type="email" id="email" placeholder="Deine E-Mail" required />
-    <textarea id="message" rows="5" placeholder="Deine Nachricht" required></textarea>
-    <button type="submit">Senden</button>
-  </form>
+    <form id="contact-form" class="kontakt-form">
+      <input type="email" id="email" placeholder="Deine E-Mail" required />
+      <textarea id="message" rows="5" placeholder="Deine Nachricht" required></textarea>
+      <button type="submit">Senden</button>
+    </form>
+  </main>
 
   <script>
     document.getElementById("contact-form").addEventListener("submit", function(event) {
