@@ -19,6 +19,7 @@
     </section>
 
     <form id="contact-form" class="kontakt-form">
+      <input type="text" name="name" placeholder="Dein Name" required />
       <input type="email" name="email" placeholder="Deine E-Mail" required />
       <textarea name="message" rows="5" placeholder="Deine Nachricht" required></textarea>
       <button type="submit">Senden</button>
@@ -27,23 +28,22 @@
 
   <!-- EmailJS SDK -->
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
   <script>
-    // Inizializza EmailJS
-    (function(){
-      emailjs.init("Csjhd5DCBIV5rBRaA");
+    (function() {
+      emailjs.init("Csjhd5DCBIV5rBRaA"); // Tua Public Key
     })();
 
-    // Invio del modulo
     document.getElementById("contact-form").addEventListener("submit", function(event) {
       event.preventDefault();
 
-      emailjs.sendForm("Immovesta_GmbH", "Kontaktformular_Eingang", "#contact-form")
+      emailjs.sendForm("Immovesta_GmbH", "Template_Immovesta", this)
         .then(function(response) {
-          alert("Danke für deine Nachricht!");
+          alert("Danke! Deine Nachricht wurde erfolgreich gesendet.");
           document.getElementById("contact-form").reset();
         }, function(error) {
           alert("Fehler beim Senden. Bitte versuche es erneut.");
-          console.log("FAILED...", error);
+          console.error("FAILED...", error);
         });
     });
   </script>
