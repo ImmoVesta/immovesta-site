@@ -18,8 +18,8 @@
       <p><strong>Adresse:</strong> Dorfstraße 15 T16, 6122 Fritzens</p>
     </section>
 
-    <form id="contact-form" class="kontakt-form" onsubmit="sendEmail(event)">
-      <input type="email" name="user_email" placeholder="Deine E-Mail" required />
+    <form id="contact-form" class="kontakt-form">
+      <input type="email" name="email" placeholder="Deine E-Mail" required />
       <textarea name="message" rows="5" placeholder="Deine Nachricht" required></textarea>
       <button type="submit">Senden</button>
     </form>
@@ -27,16 +27,17 @@
 
   <!-- EmailJS SDK -->
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
   <script>
+    // Inizializza EmailJS
     (function(){
       emailjs.init("Csjhd5DCBIV5rBRaA");
     })();
 
-    function sendEmail(event) {
+    // Invio del modulo
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
       event.preventDefault();
 
-      emailjs.sendForm("Immovesta_GmbH", "Template_Immovesta", "#contact-form")
+      emailjs.sendForm("Immovesta_GmbH", "Kontaktformular_Eingang", "#contact-form")
         .then(function(response) {
           alert("Danke für deine Nachricht!");
           document.getElementById("contact-form").reset();
@@ -44,7 +45,7 @@
           alert("Fehler beim Senden. Bitte versuche es erneut.");
           console.log("FAILED...", error);
         });
-    }
+    });
   </script>
 </body>
 </html>
