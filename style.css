@@ -1,42 +1,60 @@
+/* Stile base coerente con home */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  padding: 20px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f2f2f2;
   color: #333;
 }
 
-h1 {
+header {
+  background-color: #004aad;
+  color: white;
+  padding: 20px;
   text-align: center;
-  color: #004aad;
 }
 
+main {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Pulsanti */
+button, .button {
+  padding: 12px 24px;
+  background-color: #004aad;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:hover, .button:hover {
+  background-color: #003080;
+}
+
+/* Form stile */
 form {
-  max-width: 400px;
-  margin: 0 auto;
+  margin-top: 20px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 input, textarea {
   width: 100%;
   padding: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   border: 1px solid #ccc;
-  font-size: 16px;
   border-radius: 4px;
+  font-size: 16px;
   background-color: #fff;
-  color: #000; /* ← questa riga risolve il problema del testo invisibile */
+  color: #000; /* ← questo evita il testo invisibile */
 }
 
-button {
-  padding: 10px 20px;
-  background-color: #004aad;
-  color: white;
-  border: none;
-  font-weight: bold;
-  font-size: 16px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #003080;
+textarea::placeholder, input::placeholder {
+  color: #999;
 }
