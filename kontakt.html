@@ -4,32 +4,81 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kontakt</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      padding: 40px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #004aad;
+    }
+
+    .kontakt-info {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 18px;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #004aad;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #003080;
+    }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px;">
+<body>
+  <h1>Kontaktiere uns</h1>
 
-  <h1>Kontakt</h1>
+  <div class="kontakt-info">
+    <p><strong>Email:</strong> immovestagmbh@gmail.com</p>
+    <p><strong>Telefon:</strong> +43 676 5204470</p>
+    <p><strong>Adresse:</strong> Dorfstraße 15 T16, 6122 Fritzens</p>
+  </div>
 
-  <p><strong>Email:</strong> immovestagmbh@gmail.com</p>
-  <p><strong>Telefon:</strong> +43 676 5204470</p>
-  <p><strong>Adresse:</strong> Dorfstraße 15 T16, 6122 Fritzens</p>
-
-  <form id="contact-form" style="margin-top: 30px;">
-    <label for="email">Deine E-Mail:</label><br />
-    <input type="email" id="email" required style="width: 300px; padding: 10px; margin-bottom: 10px;"><br />
-
-    <label for="message">Deine Nachricht:</label><br />
-    <textarea id="message" rows="5" required style="width: 300px; padding: 10px;"></textarea><br />
-
-    <button type="submit" style="padding: 10px 20px; margin-top: 10px;">Senden</button>
+  <form id="contact-form">
+    <input type="email" id="email" placeholder="Deine E-Mail" required />
+    <textarea id="message" rows="5" placeholder="Deine Nachricht" required></textarea>
+    <button type="submit">Senden</button>
   </form>
 
   <script>
-    document.getElementById("contact-form").addEventListener("submit", function(e) {
-      e.preventDefault();
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault();
       alert("Danke! Deine Nachricht wurde gesendet.");
       document.getElementById("contact-form").reset();
     });
   </script>
-
 </body>
 </html>
