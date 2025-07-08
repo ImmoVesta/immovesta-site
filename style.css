@@ -1,60 +1,138 @@
-/* Stile base coerente con home */
 body {
+  background-color: #0f172a;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #f2f2f2;
-  color: #333;
 }
 
-header {
-  background-color: #004aad;
-  color: white;
+.container {
+  max-width: 800px;
+  margin: auto;
   padding: 20px;
+}
+
+h1, h2, h3 {
+  color: #10b981;
+}
+
+p, label {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.card {
+  background-color: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #10b981;
+}
+
+.button, .btn {
+  background-color: #10b981;
+  color: #fff;
+  padding: 12px 20px;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover, .btn:hover {
+  background-color: #059669;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.investment-info, .results {
+  background-color: #334155;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.results p, .investment-info p {
+  margin: 10px 0;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #334155;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 14px;
+  margin: 15px 0;
+}
+
+.progress {
+  background-color: #10b981;
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.investition-slider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.investition-slider input[type="range"] {
+  flex-grow: 1;
+  margin: 0 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+input[type="text"], input[type="email"], input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #1e293b;
+  color: white;
+  font-size: 16px;
+}
+
+input::placeholder {
+  color: #94a3b8;
+}
+
+.popup {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1e293b;
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
   text-align: center;
 }
 
-main {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: auto;
-}
-
-/* Pulsanti */
-button, .button {
-  padding: 12px 24px;
-  background-color: #004aad;
+.popup button {
+  margin-top: 20px;
+  background-color: #10b981;
   color: white;
+  padding: 10px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
-  text-decoration: none;
-}
-
-button:hover, .button:hover {
-  background-color: #003080;
-}
-
-/* Form stile */
-form {
-  margin-top: 20px;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: #fff;
-  color: #000; /* ← questo evita il testo invisibile */
-}
-
-textarea::placeholder, input::placeholder {
-  color: #999;
 }
