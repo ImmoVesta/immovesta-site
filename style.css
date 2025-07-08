@@ -1,50 +1,54 @@
 body {
-  background-color: #0f172a;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #ffffff;
   margin: 0;
   padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0f172a;
+  color: #ffffff;
 }
 
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
-  padding: 20px;
+  padding: 40px 20px;
+}
+
+header {
+  background-color: #1e293b;
+  padding: 20px 0;
+  text-align: center;
+  color: #10b981;
 }
 
 h1, h2, h3 {
+  margin: 20px 0 10px;
   color: #10b981;
 }
 
 p, label {
   font-size: 16px;
   line-height: 1.6;
+  color: #e2e8f0;
 }
 
 .card {
   background-color: #1e293b;
   padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.card h2 {
-  margin-top: 0;
-  color: #10b981;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .button, .btn {
-  background-color: #10b981;
-  color: #fff;
+  display: inline-block;
   padding: 12px 20px;
-  text-align: center;
+  background-color: #10b981;
+  color: white;
   border: none;
   border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  display: inline-block;
   text-decoration: none;
+  font-size: 16px;
+  margin-top: 15px;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
@@ -52,64 +56,57 @@ p, label {
   background-color: #059669;
 }
 
-input[type="range"] {
+input, textarea {
   width: 100%;
-  margin-top: 10px;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #1e293b;
+  color: #fff;
 }
 
-.investment-info, .results {
+input::placeholder, textarea::placeholder {
+  color: #94a3b8;
+}
+
+form {
+  margin-top: 20px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 16px;
   background-color: #334155;
-  padding: 15px;
-  border-radius: 8px;
+  border-radius: 10px;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: #10b981;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.investment-info {
+  background-color: #334155;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.results {
+  background-color: #334155;
+  padding: 20px;
+  border-radius: 10px;
   margin-top: 20px;
 }
 
 .results p, .investment-info p {
   margin: 10px 0;
-}
-
-.progress-bar {
-  width: 100%;
-  background-color: #334155;
-  border-radius: 8px;
-  overflow: hidden;
-  height: 14px;
-  margin: 15px 0;
-}
-
-.progress {
-  background-color: #10b981;
-  height: 100%;
-  transition: width 0.3s ease;
-}
-
-.investition-slider {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.investition-slider input[type="range"] {
-  flex-grow: 1;
-  margin: 0 10px;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-input[type="text"], input[type="email"], input[type="number"] {
-  width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  background-color: #1e293b;
-  color: white;
-  font-size: 16px;
-}
-
-input::placeholder {
-  color: #94a3b8;
 }
 
 .popup {
@@ -118,21 +115,25 @@ input::placeholder {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #1e293b;
-  color: white;
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  z-index: 9999;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
   text-align: center;
+  z-index: 9999;
+}
+
+.popup p {
+  color: white;
+  font-size: 18px;
 }
 
 .popup button {
   margin-top: 20px;
   background-color: #10b981;
-  color: white;
-  padding: 10px 20px;
   border: none;
+  padding: 10px 20px;
   border-radius: 8px;
+  color: white;
   font-size: 16px;
   cursor: pointer;
 }
