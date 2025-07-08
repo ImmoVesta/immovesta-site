@@ -1,24 +1,53 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Revitalisierung Altbau in Wien</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projekt Wien</title>
   <style>
     body {
       background-color: #0d1b2a;
-      color: white;
+      color: #ffffff;
       font-family: Arial, sans-serif;
       padding: 20px;
     }
+
     h1, h2 {
       color: #00d084;
     }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .progress-container {
+      background-color: #ffffff33;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 20px;
+      margin: 10px 0;
+    }
+
+    .progress-bar {
+      background-color: #00d084;
+      height: 100%;
+      width: 60%;
+      transition: width 0.5s ease-in-out;
+    }
+
+    .data-row p {
+      margin: 5px 0;
+    }
+
+    input[type=range] {
+      width: 100%;
+    }
+
     .results {
-      margin-top: 20px;
+      margin-top: 15px;
       margin-bottom: 20px;
     }
+
     .buttons a {
       display: inline-block;
       margin: 10px 10px 0 0;
@@ -29,6 +58,7 @@
       border-radius: 6px;
       font-weight: bold;
     }
+
     .buttons a:hover {
       background-color: #00a66c;
     }
@@ -36,31 +66,48 @@
 </head>
 <body>
 
-  <h1>🏘️ Revitalisierung Altbau in Wien</h1>
-  <p><strong>Standort:</strong> Wien, 8. Bezirk</p>
-  <p><strong>Anzahl Einheiten:</strong> 10 Wohnungen</p>
-  <p><strong>Extras:</strong> Denkmalgeschützt, hochwertige Materialien</p>
-  <p><strong>Geplante Fertigstellung:</strong> Q1 2026</p>
-  <p><strong>Renditeprognose:</strong> 10 % p.a.</p>
+  <h1>🏢 Modernes Wohnkonzept in Wien</h1>
 
-  <h2>Beschreibung:</h2>
-  <p>Sanierung eines denkmalgeschützten Altbaus mit Fokus auf nachhaltige Materialien, Energieeffizienz und kulturelle Aufwertung. Zentrale Lage mit starker Nachfrage am Mietmarkt.</p>
+  <div class="section">
+    <p><strong>Standort:</strong> Wien, Österreich</p>
+    <p><strong>Anzahl Einheiten:</strong> 22 Wohnungen mit Gemeinschaftsflächen</p>
+    <p><strong>Extras:</strong> Energiesparsysteme, Tiefgarage, Smart Home Integration</p>
+    <p><strong>Geplante Fertigstellung:</strong> Q1 2027</p>
+    <p><strong>Renditeprognose:</strong> 10 % p.a.</p>
+  </div>
 
-  <h2>Investieren Sie jetzt</h2>
-  <p>Geben Sie den gewünschten Anlagebetrag ein:</p>
+  <div class="section">
+    <h2>📊 Investitionsübersicht</h2>
+    <div class="data-row">
+      <p><strong>Zielbetrag:</strong> € 120.000</p>
+      <p><strong>Bereits investiert:</strong> € 72.000</p>
+      <p><strong>Verbleibend:</strong> € 48.000</p>
+      <p><strong>Mindestanlage:</strong> € 500</p>
+      <p><strong>Anzahl Investoren:</strong> 54</p>
+      <p><strong>Restlaufzeit:</strong> 25 Tage</p>
+    </div>
 
-  <input type="range" id="investment-slider" min="1000" max="10000" step="500" value="1000">
-  <p><strong>€ <span id="investment-amount">1000</span></strong></p>
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
 
-  <div class="results" id="results">
-    <p><strong>Geschätzter Gewinn p.a.:</strong> € 100</p>
-    <p><strong>Gewinn über 5 Jahre:</strong> € 500</p>
-    <p><strong>Rückzahlung + Zinsen:</strong> € 1.500</p>
+  <div class="section">
+    <h2>💰 Ihr Investment</h2>
+    <p>Wählen Sie den gewünschten Betrag:</p>
+    <input type="range" id="investment-slider" min="500" max="10000" step="500" value="1000"/>
+    <p><strong>Investition:</strong> € <span id="investment-amount">1000</span></p>
+
+    <div class="results" id="results">
+      <p><strong>Geschätzter Gewinn p.a.:</strong> € 100</p>
+      <p><strong>Gewinn über 5 Jahre:</strong> € 500</p>
+      <p><strong>Rückzahlung + Zinsen:</strong> € 1.500</p>
+    </div>
   </div>
 
   <div class="buttons">
-    <a href="investieren-bestaetigung.html">Jetzt investieren</a>
-    <a href="investieren.html">Zurück zur Startseite</a>
+    <a href="investieren-bestaetigung.html" onclick="saveInvestment()">Jetzt investieren</a>
+    <a href="investieren.html">Zurück zur Projektübersicht</a>
   </div>
 
   <script>
@@ -81,11 +128,14 @@
       `;
     }
 
+    function saveInvestment() {
+      localStorage.setItem('investition_betrag', slider.value);
+    }
+
     slider.addEventListener('input', (e) => {
       updateResults(parseInt(e.target.value));
     });
 
-    // Initialize on load
     updateResults(parseInt(slider.value));
   </script>
 
