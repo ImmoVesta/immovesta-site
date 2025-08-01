@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login – ImmoVesta</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #0c1a23;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .login-container {
+      max-width: 400px;
+      margin: 80px auto;
+      padding: 30px;
+      background-color: #101820;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #2cd1a0;
+    }
+
+    .login-container label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .login-container button {
+      width: 100%;
+      background-color: #2cd1a0;
+      color: #0c1a23;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .login-container button:hover {
+      background-color: #24b68e;
+    }
+
+    .login-container .register-link {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .login-container .register-link a {
+      color: #2cd1a0;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form onsubmit="event.preventDefault(); alert('Login funktioniert noch nicht');">
+      <label for="email">E-Mail oder Benutzername</label>
+      <input type="text" id="email" name="email" required />
+
+      <label for="password">Passwort</label>
+      <input type="password" id="password" name="password" required />
+
+      <button type="submit">Login</button>
+    </form>
+
+    <div class="register-link">
+      Noch kein Konto? <a href="registrieren.html">Jetzt registrieren</a>
+    </div>
+  </div>
+</body>
+</html>
