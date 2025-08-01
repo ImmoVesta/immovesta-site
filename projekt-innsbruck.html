@@ -6,24 +6,22 @@
   <title>Projekt Innsbruck</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    .progress-bar {
+    .gallery img {
       width: 100%;
-      background-color: #ccc;
-      border-radius: 20px;
-      overflow: hidden;
-      height: 20px;
-      margin: 10px 0;
+      max-width: 600px;
+      margin-bottom: 15px;
+      border-radius: 6px;
     }
-    .progress-fill {
-      height: 100%;
-      background-color: #2cd1a0;
-      width: 0%;
-      transition: width 0.5s;
+    .highlight-box {
+      background-color: #101820;
+      padding: 15px;
+      border-radius: 6px;
+      margin-top: 15px;
+      color: #fff;
+      line-height: 1.6;
     }
-    .project-img {
-      width: 100%;
-      border-radius: 8px;
-      margin: 15px 0;
+    .highlight-box strong {
+      color: #2cd1a0;
     }
   </style>
 </head>
@@ -33,59 +31,68 @@
     <h1>Projekt Innsbruck</h1>
   </header>
 
-  <main>
-    <section class="info-section">
-      <img src="projekt-innsbruck.jpg.JPG" alt="Projekt Innsbruck" class="project-img" />
-      <h2>Details zum Projekt</h2>
-      <p>
-        In zentraler Lage in Innsbruck entsteht ein modernes Wohngebäude mit 12 Einheiten.
-        Nachhaltige Materialien, hochwertige Ausstattung und optimale Renditechancen.
-      </p>
-      <p><strong>Projektziel:</strong> €100.000</p>
-      <p><strong>Bereits investiert:</strong> €52.400</p>
-      <div class="progress-bar">
-        <div class="progress-fill" style="width: 52.4%;"></div>
-      </div>
-      <p><strong>Verbleibende Zeit:</strong> 28 Tage</p>
-      <p><strong>Prognostizierte Rendite:</strong> <span id="randomReturn">7.5%</span></p>
-    </section>
+  <section class="gallery">
+    <img src="projekt-innsbruck.jpg.JPG" alt="Projekt Innsbruck Hauptbild" />
+    <img src="projekt-innsbruck-1.jpg.JPG" alt="Projekt Innsbruck Ansicht 1" />
+    <img src="projekt-innsbruck-2.jpg.JPG" alt="Projekt Innsbruck Ansicht 2" />
+  </section>
 
-    <section class="info-section">
-      <h2>Investitionsbetrag wählen</h2>
-      <label for="investment">Wähle deinen Betrag (€):</label><br />
-      <input type="range" id="investment" name="investment" min="500" max="10000" step="100" value="1000">
-      <p>Gewählter Betrag: <span id="selectedAmount">€1000</span></p>
-      <p>Renditeprognose: <span id="profit">€75.00</span></p>
-    </section>
-
-    <div class="cta">
-      <a href="investieren-bestaetigung.html?projekt=innsbruck" class="button">Jetzt investieren</a><br />
-      <a href="investieren.html" class="button">Zurück zu den Projekten</a>
+  <section class="info-section">
+    <h2>Details zum Projekt</h2>
+    <p>
+      Die <strong>ImmoVesta GmbH</strong> bietet Ihnen die Möglichkeit, sich an einem hochwertigen Immobilienprojekt in Innsbruck zu beteiligen. 
+      In zentraler Lage entsteht ein modernes Wohngebäude mit 12 Einheiten, das durch seine Ausstattung, Lage und Bauweise überzeugt.
+    </p>
+    <div class="highlight-box">
+      <p><strong>Fixe Rendite:</strong> 7,7 %</p>
+      <p><strong>Voraussichtliche Laufzeit:</strong> 12 Monate</p>
+      <p><strong>Finanzierungsvolumen:</strong> €100.000</p>
+      <p><strong>Stand der Finanzierung:</strong> €23.000 gesammelt</p>
     </div>
-  </main>
+  </section>
+
+  <section class="info-section">
+    <h2>Projektbeschreibung</h2>
+    <p>
+      Die ImmoVesta GmbH realisiert ein Projekt zur Errichtung eines Wohngebäudes in einem urbanen und aufstrebenden Viertel von Innsbruck.
+      Die Immobilie befindet sich in einer attraktiven und ruhigen Lage mit optimaler Anbindung an den öffentlichen Verkehr sowie alle notwendigen Einrichtungen des täglichen Bedarfs.
+    </p>
+    <p>
+      Die Bauweise entspricht den aktuellen energetischen Standards und bietet ein hohes Maß an Wohnqualität. Die Einheiten werden hochwertig ausgestattet
+      und sind sowohl für Eigennutzer als auch Kapitalanleger interessant.
+    </p>
+    <p>
+      Zur Sicherheit der Investoren verpflichtet sich die Projektgesellschaft zu einer persönlichen Bürgschaft des Geschäftsführers sowie zur
+      Treuhandabwicklung über ein separates Konto.
+    </p>
+  </section>
+
+  <section class="info-section">
+    <h2>Investitionsbetrag wählen</h2>
+    <label for="investment">Wähle deinen Betrag (€):</label><br />
+    <input type="range" id="investment" name="investment" min="500" max="10000" step="10" value="1000">
+    <p>Gewählter Betrag: <span id="selectedAmount">€1000</span></p>
+    <p>Renditeprognose (7,7 %): <span id="profit">€77</span></p>
+  </section>
+
+  <div class="cta">
+    <a href="investieren-bestaetigung.html?projekt=innsbruck" class="button">Jetzt investieren</a><br />
+    <a href="investieren.html" class="button">Zurück zu den Projekten</a>
+  </div>
 
   <script>
-    // Rendimento random tra 6% e 10%
-    const minReturn = 6;
-    const maxReturn = 10;
-    const randomPercent = (Math.random() * (maxReturn - minReturn) + minReturn).toFixed(1);
-    document.getElementById('randomReturn').textContent = randomPercent + '%';
-
-    // Slider e calcolo dinamico
     const slider = document.getElementById("investment");
     const selectedAmount = document.getElementById("selectedAmount");
     const profit = document.getElementById("profit");
 
-    function updateInvestment() {
-      const value = parseInt(slider.value);
+    slider.addEventListener("input", function () {
+      const value = parseInt(this.value);
       selectedAmount.textContent = `€${value}`;
-      const rendita = (value * (randomPercent / 100)).toFixed(2);
-      profit.textContent = `€${rendita}`;
+      profit.textContent = `€${(value * 0.077).toFixed(2)}`;
       localStorage.setItem("betrag_innsbruck", value);
-    }
+    });
 
-    slider.addEventListener("input", updateInvestment);
-    window.onload = updateInvestment;
+    localStorage.setItem("betrag_innsbruck", slider.value);
   </script>
 </body>
 </html>
