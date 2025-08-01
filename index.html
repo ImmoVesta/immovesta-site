@@ -31,6 +31,7 @@
       border-radius: 5px;
       font-weight: bold;
       font-size: 13px;
+      cursor: pointer;
     }
 
     .login-button:hover {
@@ -125,7 +126,6 @@
       margin-top: 20px;
     }
 
-    /* COOKIE BANNER */
     #cookie-banner {
       position: fixed;
       bottom: 0;
@@ -158,7 +158,7 @@
 <body>
 
   <header>
-    <a href="login.html" class="login-button">Login</a>
+    <a href="login.html" class="login-button" id="loginLink">Login</a>
     <img src="immovesta-logo.PNG" alt="ImmoVesta Logo" class="logo" />
     <h1>ImmoVesta</h1>
     <p class="slogan">Wo Immobilien Werte Treffen</p>
@@ -228,7 +228,6 @@
     <p class="copyright">© 2025 ImmoVesta – Alle Rechte vorbehalten.</p>
   </footer>
 
-  <!-- COOKIE BANNER -->
   <div id="cookie-banner">
     Wir verwenden Cookies, um Ihnen das beste Erlebnis auf unserer Website zu bieten.
     <a href="#datenschutz">Mehr erfahren</a>
@@ -248,10 +247,25 @@
     }
 
     window.onload = function () {
+      // COOKIE BANNER
       if (localStorage.getItem('cookiesAccepted') === 'true') {
         document.getElementById('cookie-banner').style.display = 'none';
       }
+
+      // LOGIN STATE
+      const loginLink = document.getElementById('loginLink');
+      if (localStorage.getItem('loggedIn') === 'true') {
+        loginLink.textContent = 'Logout';
+        loginLink.href = '#';
+        loginLink.addEventListener('click', function () {
+          localStorage.removeItem('loggedIn');
+          localStorage.removeItem('userEmail');
+          alert('Du hast dich erfolgreich abgemeldet.');
+          location.reload();
+        });
+      }
     };
   </script>
+
 </body>
 </html>
