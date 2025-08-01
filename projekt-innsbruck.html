@@ -5,6 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projekt Innsbruck</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .project-image {
+      width: 100%;
+      max-height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .progress-container {
+      background-color: #ddd;
+      border-radius: 8px;
+      height: 20px;
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background-color: #2cd1a0;
+      border-radius: 8px;
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+  </style>
 </head>
 <body class="subpage">
   <header>
@@ -12,42 +37,155 @@
     <h1>Projekt Innsbruck</h1>
   </header>
 
-  <section class="info-section">
-    <h2>Details zum Projekt</h2>
-    <p>
-      In zentraler Lage in Innsbruck entsteht ein modernes Wohngebäude mit 12 Einheiten.
-      Nachhaltige Materialien, hochwertige Ausstattung und optimale Renditechancen.
-    </p>
-  </section>
+  <main>
+    <img src="projekt-innsbruck.jpg" alt="Projekt Innsbruck" class="project-image" />
 
-  <section class="info-section">
-    <h2>Investitionsbetrag wählen</h2>
-    <label for="investment">Wähle deinen Betrag (€):</label><br />
-    <input type="range" id="investment" name="investment" min="500" max="10000" step="10" value="1000">
-    <p>Gewählter Betrag: <span id="selectedAmount">€1000</span></p>
-    <p>Renditeprognose (10%): <span id="profit">€100</span></p>
-  </section>
+    <section class="info-section">
+      <h2>Details zum Projekt</h2>
+      <p>
+        In zentraler Lage in Innsbruck entsteht ein modernes Wohngebäude mit 12 Einheiten.
+        Nachhaltige Materialien, hochwertige Ausstattung und optimale Renditechancen.
+      </p>
+      <p><strong>Projektziel:</strong> €100.000</p>
+      <p><strong>Bereits investiert:</strong> <span id="invested-amount">€52.400</span></p>
+      <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <p><strong>Verbleibende Zeit:</strong> <span id="days-left">28 Tage</span></p>
+      <p><strong>Prognostizierte Rendite:</strong> <span id="yield">-</span></p>
+    </section>
 
-  <div class="cta">
-    <a href="investieren-bestaetigung.html?projekt=innsbruck" class="button">Jetzt investieren</a><br />
-    <a href="investieren.html" class="button">Zurück zu den Projekten</a>
-  </div>
+    <section class="info-section">
+
+
+Perfetto, possiamo aggiungere **più immagini** (es. galleria orizzontale o verticale) nella pagina del progetto!
+
+### 🔧 Scelte di implementazione:
+Ti propongo una **galleria orizzontale** con più immagini affiancate, scorribili su mobile (responsive).  
+Funziona bene e mantiene l’estetica pulita.
+
+---
+
+### ✅ Codice completo `projekt-innsbruck.html` aggiornato con:
+- Galleria immagini
+- Rendimento casuale tra 6% e 10%
+- Barra di progresso
+- Dettagli e slider investimento
+
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projekt Innsbruck</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .image-gallery {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    .image-gallery img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+
+    .progress-container {
+      background-color: #ddd;
+      border-radius: 8px;
+      height: 20px;
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background-color: #2cd1a0;
+      border-radius: 8px;
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+  </style>
+</head>
+<body class="subpage">
+  <header>
+    <img src="immovesta-logo.PNG" alt="ImmoVesta Logo" class="logo-small" />
+    <h1>Projekt Innsbruck</h1>
+  </header>
+
+  <main>
+    <div class="image-gallery">
+      <img src="innsbruck1.jpg" alt="Projektbild 1">
+      <img src="innsbruck2.jpg" alt="Projektbild 2">
+      <img src="innsbruck3.jpg" alt="Projektbild 3">
+    </div>
+
+    <section class="info-section">
+      <h2>Details zum Projekt</h2>
+      <p>
+        In zentraler Lage in Innsbruck entsteht ein modernes Wohngebäude mit 12 Einheiten.
+        Nachhaltige Materialien, hochwertige Ausstattung und optimale Renditechancen.
+      </p>
+      <p><strong>Projektziel:</strong> €100.000</p>
+      <p><strong>Bereits investiert:</strong> <span id="invested-amount">€52.400</span></p>
+      <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <p><strong>Verbleibende Zeit:</strong> <span id="days-left">28 Tage</span></p>
+      <p><strong>Prognostizierte Rendite:</strong> <span id="yield">–</span></p>
+    </section>
+
+    <section class="info-section">
+      <h2>Investitionsbetrag wählen</h2>
+      <label for="investment">Wähle deinen Betrag (€):</label><br />
+      <input type="range" id="investment" name="investment" min="500" max="10000" step="10" value="1000">
+      <p>Gewählter Betrag: <span id="selectedAmount">€1000</span></p>
+      <p>Renditeprognose: <span id="profit">€100</span></p>
+    </section>
+
+    <div class="cta">
+      <a href="investieren-bestaetigung.html?projekt=innsbruck" class="button">Jetzt investieren</a><br />
+      <a href="investieren.html" class="button">Zurück zu den Projekten</a>
+    </div>
+  </main>
 
   <script>
     const slider = document.getElementById("investment");
     const selectedAmount = document.getElementById("selectedAmount");
     const profit = document.getElementById("profit");
+    const yieldSpan = document.getElementById("yield");
+    const progressBar = document.getElementById("progress-bar");
+
+    // Rendimento casuale tra 6% e 10%
+    const randomYield = (Math.random() * 4 + 6).toFixed(1); // esempio: 6.0–10.0
+    yieldSpan.textContent = randomYield + "%";
+
+    function updateValues(val) {
+      selectedAmount.textContent = `€${val}`;
+      const rendimento = (val * (randomYield / 100)).toFixed(2);
+      profit.textContent = `€${rendimento}`;
+    }
 
     slider.addEventListener("input", function () {
-      const value = parseInt(this.value);
-      selectedAmount.textContent = `€${value}`;
-      profit.textContent = `€${(value * 0.10).toFixed(2)}`;
-      localStorage.setItem("betrag_innsbruck", value);
+      updateValues(this.value);
+      localStorage.setItem("betrag_innsbruck", this.value);
     });
 
-    // Initial speichern
-    localStorage.setItem("betrag_innsbruck", slider.value);
+    // Set iniziale
+    const initialVal = slider.value;
+    updateValues(initialVal);
+    localStorage.setItem("betrag_innsbruck", initialVal);
+
+    // Barra progresso
+    const invested = 52400;
+    const target = 100000;
+    const percent = (invested / target * 100).toFixed(1);
+    progressBar.style.width = percent + "%";
   </script>
 </body>
 </html>
-
