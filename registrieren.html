@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registrieren – ImmoVesta</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #0c1a23;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .register-container {
+      max-width: 450px;
+      margin: 80px auto;
+      padding: 30px;
+      background-color: #101820;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    .register-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #2cd1a0;
+    }
+
+    .register-container label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    .register-container input[type="text"],
+    .register-container input[type="email"],
+    .register-container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .register-container input[type="checkbox"] {
+      margin-right: 8px;
+    }
+
+    .register-container button {
+      width: 100%;
+      background-color: #2cd1a0;
+      color: #0c1a23;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .register-container button:hover {
+      background-color: #24b68e;
+    }
+
+    .register-container .login-link {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .register-container .login-link a {
+      color: #2cd1a0;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="register-container">
+    <h2>Registrieren</h2>
+    <form onsubmit="event.preventDefault(); alert('Registrierung funktioniert noch nicht');">
+      <label for="email">E-Mail</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="password">Passwort</label>
+      <input type="password" id="password" name="password" required />
+
+      <label for="phone">Telefonnummer</label>
+      <input type="text" id="phone" name="phone" required />
+
+      <label for="address">Adresse</label>
+      <input type="text" id="address" name="address" required />
+
+      <label>
+        <input type="checkbox" required />
+        Ich akzeptiere die <a href="agb.html" style="color:#2cd1a0;">AGB</a>
+      </label>
+
+      <button type="submit">Registrieren</button>
+    </form>
+
+    <div class="login-link">
+      Schon registriert? <a href="login.html">Hier einloggen</a>
+    </div>
+  </div>
+</body>
+</html>
