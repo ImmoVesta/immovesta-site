@@ -20,6 +20,23 @@
       position: relative;
     }
 
+    .login-button {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      background-color: #2cd1a0;
+      color: #0c1a23;
+      padding: 8px 16px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .login-button:hover {
+      background-color: #24b68e;
+    }
+
     .logo {
       width: 120px;
       margin-bottom: 10px;
@@ -55,38 +72,6 @@
     }
 
     .button:hover {
-      background-color: #24b68e;
-    }
-
-    /* LOGIN */
-    .login-form {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
-
-    .login-form input {
-      padding: 6px 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 13px;
-    }
-
-    .login-form button {
-      background-color: #2cd1a0;
-      color: #0c1a23;
-      border: none;
-      padding: 6px 14px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 13px;
-    }
-
-    .login-form button:hover {
       background-color: #24b68e;
     }
 
@@ -173,16 +158,10 @@
 <body>
 
   <header>
+    <a href="login.html" class="login-button">Login</a>
     <img src="immovesta-logo.PNG" alt="ImmoVesta Logo" class="logo" />
     <h1>ImmoVesta</h1>
     <p class="slogan">Wo Immobilien Werte Treffen</p>
-
-    <!-- LOGIN -->
-    <form class="login-form" onsubmit="event.preventDefault(); alert('Login-Funktion ist inaktiv');">
-      <input type="email" placeholder="E-Mail" required />
-      <input type="password" placeholder="Passwort" required />
-      <button type="submit">Login</button>
-    </form>
   </header>
 
   <main>
