@@ -4,65 +4,107 @@
   <meta charset="UTF-8">
   <title>Investieren – ImmoVesta</title>
   <link rel="stylesheet" href="style.css">
- <style>
-body {
-  background-color: #f0f2f5;
-  font-family: Arial, sans-serif;
-  color: #111;
-  margin: 0;
-  padding: 0;
-}
+  <style>
+    body {
+      background-color: #f0f2f5;
+      font-family: Arial, sans-serif;
+      color: #111;
+      margin: 0;
+      padding: 0;
+    }
 
-.project-card {
-  background-color: #ffffff;
-  color: #222;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 800px;
-  transition: transform 0.2s ease-in-out;
-}
+    header {
+      text-align: center;
+      padding: 20px 10px;
+    }
 
-.project-card:hover {
-  transform: scale(1.01);
-}
+    .logo-small {
+      max-height: 60px;
+      margin-bottom: 10px;
+    }
 
-.project-card h2 {
-  color: #003366;
-}
+    .project-list {
+      padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-.rendite-badge {
-  background-color: #dfffe9;
-  color: #057c4f;
-  font-weight: bold;
-}
+    .project-card {
+      margin: 30px 0;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
 
-.button {
-  background-color: #003366;
-  color: #fff;
-  padding: 10px 18px;
-  text-decoration: none;
-  border-radius: 5px;
-  display: inline-block;
-}
+    .project-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
 
-.button:hover {
-  background-color: #0055aa;
-}
+    .project-card h2 {
+      color: #003366;
+      margin-bottom: 10px;
+    }
 
-.progress-bar {
-  background-color: #eee;
-  height: 12px;
-  border-radius: 6px;
-  overflow: hidden;
-}
+    .rendite-badge {
+      background-color: #dfffe9;
+      color: #057c4f;
+      font-weight: bold;
+      padding: 4px 10px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
 
-.progress-bar .filled {
-  background-color: #2cd1a0;
-  height: 100%;
-}
-</style>
+    .progress-bar {
+      background-color: #ddd;
+      height: 12px;
+      border-radius: 6px;
+      overflow: hidden;
+      margin: 10px 0;
+    }
+
+    .progress-bar .filled {
+      background-color: #2cd1a0;
+      height: 100%;
+    }
+
+    .button {
+      background-color: #003366;
+      color: #fff;
+      padding: 10px 16px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-right: 10px;
+      display: inline-block;
+    }
+
+    .button:hover {
+      background-color: #0055aa;
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 15px 20px;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    .disclaimer {
+      font-size: 0.85em;
+      color: #444;
+      margin-top: 20px;
+      background: #eaeaea;
+      padding: 10px 15px;
+      border-radius: 6px;
+    }
+  </style>
 </head>
 <body class="subpage">
 
@@ -86,7 +128,7 @@ body {
       <p>✔ 64 % finanziert – noch €36.000 verfügbar</p>
       <div class="cta-buttons">
         <a class="button" href="projekt-innsbruck.html">Mehr erfahren</a>
-        <a class="button" href="investieren-bestaetigug.html#investieren">Jetzt investieren</a>
+        <a class="button" href="investieren-bestaetigung.html?projekt=innsbruck">Jetzt investieren</a>
       </div>
     </div>
 
@@ -94,7 +136,7 @@ body {
     <div class="project-card">
       <img src="projekt-graz.jpg.png" alt="Projekt Graz">
       <h2>🌿 Projekt Graz</h2>
-      <p>In einem aufstrebenden Stadtteil von Graz wird ein Altes Mehrfamilienhaus mit 20 Wohnungen Saniert. Moderne Architektur, grüne Innenhöfe, stabile Mieteinnahmen.</p>
+      <p>Altes Mehrfamilienhaus mit 20 Einheiten wird in Graz vollständig modernisiert. Attraktive Lage, stabile Mieteinnahmen und grüne Innenhöfe.</p>
       <span class="rendite-badge">Rendite: 8,9 % p.a.</span>
       <p><strong>Dauer:</strong> 14 Monate (≈ 60 Wochen)</p>
       <p><strong>Investition ab:</strong> € 650</p>
@@ -103,7 +145,7 @@ body {
       <p>✔ 41 % finanziert – noch €88.500 verfügbar</p>
       <div class="cta-buttons">
         <a class="button" href="projekt-graz.html">Mehr erfahren</a>
-        <a class="button" href="investieren-bestaetigug.html#investieren">Jetzt investieren</a>
+        <a class="button" href="investieren-bestaetigung.html?projekt=graz">Jetzt investieren</a>
       </div>
     </div>
 
@@ -111,7 +153,7 @@ body {
     <div class="project-card">
       <img src="projekt-vienna.jpg.png" alt="Projekt Wien">
       <h2>🏘️ Projekt Wien</h2>
-      <p>Exklusives Neubauprojekt im Herzen von Wien. Hochwertige Eigentumswohnungen, erstklassige Anbindung und hohe Nachfrage.</p>
+      <p>Exklusives Neubauprojekt im 8. Bezirk. Hochwertige Eigentumswohnungen, erstklassige Anbindung und hohe Nachfrage.</p>
       <span class="rendite-badge">Rendite: 12,0 % p.a.</span>
       <p><strong>Dauer:</strong> 18 Monate (≈ 78 Wochen)</p>
       <p><strong>Investition ab:</strong> € 830</p>
@@ -120,7 +162,7 @@ body {
       <p>✔ 27 % finanziert – noch €146.000 verfügbar</p>
       <div class="cta-buttons">
         <a class="button" href="projekt-vienna.html">Mehr erfahren</a>
-        <a class="button" href="investieren-bestaetigung.html#investieren">Jetzt investieren</a>
+        <a class="button" href="investieren-bestaetigung.html?projekt=vienna">Jetzt investieren</a>
       </div>
     </div>
 
@@ -131,11 +173,4 @@ body {
   </div>
 
   <footer>
-    <p class="disclaimer">
-      <strong>Wichtiger Hinweis:</strong> Die angegebene Rendite ist eine Prognose und nicht garantiert. Es können Risiken im Zusammenhang mit Verzögerungen, Marktveränderungen oder anderen externen Faktoren bestehen. Bitte investieren Sie verantwortungsbewusst.
-    </p>
-    <p>© 2025 ImmoVesta – Alle Rechte vorbehalten.</p>
-  </footer>
-
-</body>
-</html>
+    <p class="
