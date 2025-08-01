@@ -4,8 +4,64 @@
   <meta charset="UTF-8">
   <title>Investieren – ImmoVesta</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .project-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 30px;
+      background-color: #f9f9f9;
+    }
+
+    .project-card img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
+
+    .rendite-badge {
+      background-color: #2cd1a0;
+      color: #0c1a23;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+      display: inline-block;
+      margin-top: 8px;
+      margin-bottom: 12px;
+    }
+
+    .progress-bar {
+      background-color: #ddd;
+      border-radius: 6px;
+      overflow: hidden;
+      height: 12px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+
+    .progress-bar .filled {
+      background-color: #2cd1a0;
+      height: 100%;
+    }
+
+    .cta-buttons a.button {
+      display: inline-block;
+      margin-right: 10px;
+      margin-top: 10px;
+    }
+
+    .disclaimer {
+      font-size: 13px;
+      margin-top: 40px;
+      color: #555;
+    }
+  </style>
 </head>
 <body class="subpage">
+
   <header>
     <img src="immovesta-logo.PNG" alt="ImmoVesta Logo" class="logo-small">
     <h1>Investiere in Immobilienprojekte</h1>
@@ -13,48 +69,69 @@
 
   <main class="project-list">
 
+    <!-- Projekt Innsbruck -->
     <div class="project-card">
+      <img src="projekt-innsbruck.jpg.JPG" alt="Projekt Innsbruck">
       <h2>🏗️ Projekt Innsbruck</h2>
-      <p>Ein modernes Wohngebäude mit 12 Einheiten in zentraler Lage. Hochwertige Ausstattung, nachhaltige Materialien und attraktive Mietnachfrage.</p>
+      <p>In zentraler Lage in Innsbruck entsteht ein modernes Wohngebäude mit 12 Einheiten. Nachhaltige Materialien und stabile Nachfrage.</p>
+      <span class="rendite-badge">Rendite: 7,7 % p.a.</span>
+      <p><strong>Dauer:</strong> 12 Monate (≈ 52 Wochen)</p>
       <p><strong>Investition ab:</strong> € 500</p>
       <p><strong>Zielbetrag:</strong> € 100.000</p>
-      <p><strong>Erwartete Rendite:</strong> 7,7 % in 12 Monaten</p>
-      <a class="button" href="projekt-innsbruck.html">Mehr erfahren</a>
+      <div class="progress-bar"><div class="filled" style="width: 64%;"></div></div>
+      <p>✔ 64 % finanziert – noch €36.000 verfügbar</p>
+      <div class="cta-buttons">
+        <a class="button" href="projekt-innsbruck.html">Mehr erfahren</a>
+        <a class="button" href="projekt-innsbruck.html#investieren">Jetzt investieren</a>
+      </div>
     </div>
 
+    <!-- Projekt Graz -->
     <div class="project-card">
+      <img src="projekt-graz.jpg.png" alt="Projekt Graz">
       <h2>🌿 Projekt Graz</h2>
-      <p>Ein Altbau in Neubau mit 20 Wohneinheiten in einem aufstrebenden Stadtteil. Optimale Lage, moderne Architektur und stabile Einnahmen.</p>
+      <p>In einem aufstrebenden Stadtteil von Graz wird ein altes Mehrfamilienhaus mit 20 Wohnungen Saniert. Moderne Architektur, grüne Innenhöfe, stabile Mieteinnahmen.</p>
+      <span class="rendite-badge">Rendite: 8,9 % p.a.</span>
+      <p><strong>Dauer:</strong> 14 Monate (≈ 60 Wochen)</p>
       <p><strong>Investition ab:</strong> € 650</p>
       <p><strong>Zielbetrag:</strong> € 150.000</p>
-      <p><strong>Erwartete Rendite:</strong> 8,9 % in 14 Monaten</p>
-      <a class="button" href="projekt-graz.html">Mehr erfahren</a>
+      <div class="progress-bar"><div class="filled" style="width: 41%;"></div></div>
+      <p>✔ 41 % finanziert – noch €88.500 verfügbar</p>
+      <div class="cta-buttons">
+        <a class="button" href="projekt-graz.html">Mehr erfahren</a>
+        <a class="button" href="projekt-graz.html#investieren">Jetzt investieren</a>
+      </div>
     </div>
 
+    <!-- Projekt Wien -->
     <div class="project-card">
+      <img src="projekt-vienna.jpg.png" alt="Projekt Wien">
       <h2>🏘️ Projekt Wien</h2>
-      <p>Exklusives Neubauprojekt im 8. Bezirk mit Eigentumswohnungen und hoher Nachfrage. Top-Lage und stabile Mietrendite.</p>
+      <p>Exklusives Neubauprojekt im Herzen von Wien. Hochwertige Eigentumswohnungen, erstklassige Anbindung und hohe Nachfrage.</p>
+      <span class="rendite-badge">Rendite: 12,0 % p.a.</span>
+      <p><strong>Dauer:</strong> 18 Monate (≈ 78 Wochen)</p>
       <p><strong>Investition ab:</strong> € 830</p>
       <p><strong>Zielbetrag:</strong> € 200.000</p>
-      <p><strong>Erwartete Rendite:</strong> 12 % in 18 Monaten</p>
-      <a class="button" href="projekt-vienna.html">Mehr erfahren</a>
+      <div class="progress-bar"><div class="filled" style="width: 27%;"></div></div>
+      <p>✔ 27 % finanziert – noch €146.000 verfügbar</p>
+      <div class="cta-buttons">
+        <a class="button" href="projekt-vienna.html">Mehr erfahren</a>
+        <a class="button" href="projekt-vienna.html#investieren">Jetzt investieren</a>
+      </div>
     </div>
 
   </main>
-
-  <section class="disclaimer">
-    <p style="font-size: 13px; color: #777; padding: 20px; line-height: 1.5; max-width: 800px; margin: auto;">
-      <strong>ℹ️ Hinweis:</strong> Die angegebene Rendite stellt eine Prognose dar und kann je nach Projektverlauf leicht variieren. 
-      Der investierte Kapitalbetrag wird am Ende der Laufzeit vollständig zurückgezahlt, es sei denn, es kommt zu unerwarteten Projektverzögerungen.
-    </p>
-  </section>
 
   <div class="cta">
     <a href="index.html" class="button">Zurück zur Startseite</a>
   </div>
 
   <footer>
+    <p class="disclaimer">
+      <strong>Wichtiger Hinweis:</strong> Die angegebene Rendite ist eine Prognose und nicht garantiert. Es können Risiken im Zusammenhang mit Verzögerungen, Marktveränderungen oder anderen externen Faktoren bestehen. Bitte investieren Sie verantwortungsbewusst.
+    </p>
     <p>© 2025 ImmoVesta – Alle Rechte vorbehalten.</p>
   </footer>
+
 </body>
 </html>
