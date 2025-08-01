@@ -5,6 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projekt Vienna</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .gallery img {
+      width: 100%;
+      max-width: 600px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+    }
+    .highlight-box {
+      background-color: #101820;
+      padding: 15px;
+      border-radius: 6px;
+      margin-top: 15px;
+      color: #fff;
+      line-height: 1.6;
+    }
+    .highlight-box strong {
+      color: #2cd1a0;
+    }
+  </style>
 </head>
 <body class="subpage">
   <header>
@@ -12,11 +31,35 @@
     <h1>Projekt Vienna</h1>
   </header>
 
+  <section class="gallery">
+    <img src="projekt-vienna.jpg.png" alt="Projekt Vienna Hauptbild" />
+    <img src="projekt-vienna-1.jpg.png" alt="Projekt Vienna Ansicht 1" />
+    <img src="projekt-vienna-2.jpg.png" alt="Projekt Vienna Ansicht 2" />
+    <img src="projekt-vienna-3.jpg.png" alt="Projekt Vienna Ansicht 3" />
+  </section>
+
   <section class="info-section">
     <h2>Details zum Projekt</h2>
     <p>
-      Dieses exklusive Neubauprojekt im Herzen von Wien bietet hochwertige Eigentumswohnungen mit erstklassiger Anbindung.
-      Die Nachfrage ist hoch, und das Projekt verspricht stabile Renditen für Investoren.
+      In einer begehrten Lage Wiens entsteht ein exklusives Neubauprojekt mit Eigentumswohnungen, das moderne Architektur mit höchstem Wohnkomfort verbindet.
+    </p>
+    <div class="highlight-box">
+      <p><strong>Fixe Rendite:</strong> 12 %</p>
+      <p><strong>Voraussichtliche Laufzeit:</strong> 18 Monate</p>
+      <p><strong>Finanzierungsvolumen:</strong> €200.000</p>
+      <p><strong>Stand der Finanzierung:</strong> €89.700 gesammelt</p>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <h2>Projektbeschreibung</h2>
+    <p>
+      Das Projekt liegt im Herzen von Wien und ist besonders für Anleger interessant, die auf Luxuswohnraum in Toplage setzen.
+      Die Projektentwicklung umfasst großzügige Wohnflächen, durchdachte Grundrisse und moderne Ausstattung.
+    </p>
+    <p>
+      Die Finanzierung erfolgt unter strenger Kontrolle und mit persönlicher Haftung der Projektverantwortlichen.
+      Ziel ist eine nachhaltige Entwicklung mit hoher Werterhaltung.
     </p>
   </section>
 
@@ -25,7 +68,7 @@
     <label for="investment">Wähle deinen Betrag (€):</label><br />
     <input type="range" id="investment" name="investment" min="830" max="20000" step="10" value="1000">
     <p>Gewählter Betrag: <span id="selectedAmount">€1000</span></p>
-    <p>Renditeprognose (10%): <span id="profit">€100</span></p>
+    <p>Renditeprognose (12 %): <span id="profit">€120</span></p>
   </section>
 
   <div class="cta">
@@ -41,11 +84,10 @@
     slider.addEventListener("input", function () {
       const value = parseInt(this.value);
       selectedAmount.textContent = `€${value}`;
-      profit.textContent = `€${(value * 0.10).toFixed(2)}`;
+      profit.textContent = `€${(value * 0.12).toFixed(2)}`;
       localStorage.setItem("betrag_vienna", value);
     });
 
-    // Initial speichern
     localStorage.setItem("betrag_vienna", slider.value);
   </script>
 </body>
