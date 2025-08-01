@@ -5,6 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projekt Graz</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .gallery img {
+      width: 100%;
+      max-width: 600px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+    }
+    .highlight-box {
+      background-color: #101820;
+      padding: 15px;
+      border-radius: 6px;
+      margin-top: 15px;
+      color: #fff;
+      line-height: 1.6;
+    }
+    .highlight-box strong {
+      color: #2cd1a0;
+    }
+  </style>
 </head>
 <body class="subpage">
   <header>
@@ -12,11 +31,36 @@
     <h1>Projekt Graz</h1>
   </header>
 
+  <section class="gallery">
+    <img src="projekt-graz.jpg.png" alt="Projekt Graz Hauptbild" />
+    <img src="projekt-graz-1.jpg.png" alt="Projekt Graz Ansicht 1" />
+    <img src="projekt-graz-2.jpg.png" alt="Projekt Graz Ansicht 2" />
+    <img src="projekt-graz-3.jpg.png" alt="Projekt Graz Ansicht 3" />
+  </section>
+
   <section class="info-section">
     <h2>Details zum Projekt</h2>
     <p>
-      In einem aufstrebenden Stadtteil von Graz wird ein neues Mehrfamilienhaus mit 20 Wohnungen realisiert.
-      Attraktive Lage, moderne Architektur und stabile Mieteinnahmen machen dieses Projekt besonders lukrativ.
+      In einem aufstrebenden Stadtteil von Graz entsteht ein energieeffizientes Mehrfamilienhaus mit 20 modernen Wohneinheiten. 
+      Ideal für Investoren, die auf eine hohe Nachfrage in urbanen Lagen setzen.
+    </p>
+    <div class="highlight-box">
+      <p><strong>Fixe Rendite:</strong> 8,9 %</p>
+      <p><strong>Voraussichtliche Laufzeit:</strong> 14 Monate</p>
+      <p><strong>Finanzierungsvolumen:</strong> €150.000</p>
+      <p><strong>Stand der Finanzierung:</strong> €41.500 gesammelt</p>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <h2>Projektbeschreibung</h2>
+    <p>
+      Die Projektgesellschaft realisiert in Graz ein modernes Wohnhaus in nachhaltiger Bauweise. Die Umgebung bietet eine perfekte Infrastruktur mit 
+      Einkaufsmöglichkeiten, Anbindung an öffentliche Verkehrsmittel sowie Bildungs- und Freizeiteinrichtungen.
+    </p>
+    <p>
+      Das Gebäude ist ideal für Familien, Berufstätige und Studierende – dadurch entsteht eine breite Zielgruppe mit stabiler Nachfrage.
+      Die Projektgesellschaft sichert das Projekt durch eine persönliche Garantie des Geschäftsführers und eine treuhänderische Mittelverwaltung.
     </p>
   </section>
 
@@ -25,7 +69,7 @@
     <label for="investment">Wähle deinen Betrag (€):</label><br />
     <input type="range" id="investment" name="investment" min="650" max="15000" step="10" value="1000">
     <p>Gewählter Betrag: <span id="selectedAmount">€1000</span></p>
-    <p>Renditeprognose (10%): <span id="profit">€100</span></p>
+    <p>Renditeprognose (8,9 %): <span id="profit">€89</span></p>
   </section>
 
   <div class="cta">
@@ -41,11 +85,10 @@
     slider.addEventListener("input", function () {
       const value = parseInt(this.value);
       selectedAmount.textContent = `€${value}`;
-      profit.textContent = `€${(value * 0.10).toFixed(2)}`;
+      profit.textContent = `€${(value * 0.089).toFixed(2)}`;
       localStorage.setItem("betrag_graz", value);
     });
 
-    // Initial speichern
     localStorage.setItem("betrag_graz", slider.value);
   </script>
 </body>
