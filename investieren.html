@@ -4,61 +4,65 @@
   <meta charset="UTF-8">
   <title>Investieren – ImmoVesta</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    .project-card {
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 30px;
-      background-color: #f9f9f9;
-    }
+ <style>
+body {
+  background-color: #f0f2f5;
+  font-family: Arial, sans-serif;
+  color: #111;
+  margin: 0;
+  padding: 0;
+}
 
-    .project-card img {
-      width: 100%;
-      max-height: 200px;
-      object-fit: cover;
-      border-radius: 6px;
-      margin-bottom: 15px;
-    }
+.project-card {
+  background-color: #ffffff;
+  color: #222;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  transition: transform 0.2s ease-in-out;
+}
 
-    .rendite-badge {
-      background-color: #2cd1a0;
-      color: #0c1a23;
-      font-weight: bold;
-      padding: 5px 10px;
-      border-radius: 5px;
-      font-size: 14px;
-      display: inline-block;
-      margin-top: 8px;
-      margin-bottom: 12px;
-    }
+.project-card:hover {
+  transform: scale(1.01);
+}
 
-    .progress-bar {
-      background-color: #ddd;
-      border-radius: 6px;
-      overflow: hidden;
-      height: 12px;
-      margin-top: 5px;
-      margin-bottom: 5px;
-    }
+.project-card h2 {
+  color: #003366;
+}
 
-    .progress-bar .filled {
-      background-color: #2cd1a0;
-      height: 100%;
-    }
+.rendite-badge {
+  background-color: #dfffe9;
+  color: #057c4f;
+  font-weight: bold;
+}
 
-    .cta-buttons a.button {
-      display: inline-block;
-      margin-right: 10px;
-      margin-top: 10px;
-    }
+.button {
+  background-color: #003366;
+  color: #fff;
+  padding: 10px 18px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+}
 
-    .disclaimer {
-      font-size: 13px;
-      margin-top: 40px;
-      color: #555;
-    }
-  </style>
+.button:hover {
+  background-color: #0055aa;
+}
+
+.progress-bar {
+  background-color: #eee;
+  height: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-bar .filled {
+  background-color: #2cd1a0;
+  height: 100%;
+}
+</style>
 </head>
 <body class="subpage">
 
